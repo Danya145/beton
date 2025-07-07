@@ -1,0 +1,24 @@
+@use '../../variables.scss' as *;
+
+.nav {
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: 600;
+        color: $gray-color;
+        text-transform: uppercase;
+
+        li {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            gap: 3px;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

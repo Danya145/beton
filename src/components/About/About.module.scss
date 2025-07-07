@@ -1,0 +1,43 @@
+@use '../../variables.scss' as *;
+
+.container {
+    @include d-flex(row, center, space-between, 24px);
+    height: 750px;
+    width: 90%;
+    margin: 0 auto;
+
+    .images {
+        @include d-flex(column, center, center, 24px);
+        flex-wrap: wrap;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .info {
+        box-sizing: border-box;
+
+        h1 {
+            font-weight: 700;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        h6 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        ul {
+            font-size: 20px;
+            font-weight: 400;
+            margin: 18px 0 20px 15px;
+            box-sizing: border-box;
+        }
+    }
+}
