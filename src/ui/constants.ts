@@ -7,9 +7,14 @@ import BottomArrow from '@/assets/icons/bottom_arrow.svg';
 import Hide from '@/assets/icons/hide.png';
 import LogoIcon from '@/assets/icons/logo.svg';
 import Phone from '@/assets/icons/phone.svg';
+import RightArrow from '@/assets/icons/right_arrow.svg';
 import View from '@/assets/icons/view.png';
 import Logo from '@/assets/logo.png';
 import LogoLight from '@/assets/logo_light.png';
+import Products1 from '@/assets/products1.png';
+import Products2 from '@/assets/products2.png';
+import Products3 from '@/assets/products3.png';
+import Products4 from '@/assets/products4.png';
 
 export const IMAGES = {
   Logo: Logo,
@@ -19,6 +24,10 @@ export const IMAGES = {
   About2: About2,
   About3: About3,
   About4: About4,
+  Products1: Products1,
+  Products2: Products2,
+  Products3: Products3,
+  Products4: Products4,
 };
 
 export const ICONS = {
@@ -27,4 +36,5 @@ export const ICONS = {
   Phone: Phone,
   Logo: LogoIcon,
   BottomArrow: BottomArrow,
+  RightArrow: RightArrow,
 };

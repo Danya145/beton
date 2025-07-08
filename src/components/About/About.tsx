@@ -4,7 +4,7 @@ import * as styles from './About.module.scss';
 
 export const About = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.images}>
         <img src={IMAGES.About1} alt="" />
         <img src={IMAGES.About2} alt="" />
@@ -44,9 +44,11 @@ export const About = () => {
           <span>Нам доверяют:</span> ОАО «Минскпромстрой», ОАО «Минскремстрой» и другие крупные
           компании.
         </p>
-        <button>позвонить</button>
-        <button>заказать звонок</button>
+        <div className={styles.buttons}>
+          <button>позвонить</button>
+          <button>заказать звонок</button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

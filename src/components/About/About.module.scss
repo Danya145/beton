@@ -1,7 +1,7 @@
 @use '../../variables.scss' as *;
 
 .container {
-    @include d-flex(row, center, space-between, 24px);
+    @include d-flex(row, start, space-between, 24px);
     height: 750px;
     width: 90%;
     margin: 0 auto;
@@ -14,7 +14,31 @@
     }
 
     .info {
+        flex: 1;
         box-sizing: border-box;
+
+        .buttons {
+            margin-top: 50px;
+            @include d-flex(row, center, space-between, 24px);
+
+            button {
+                color: $white-color;
+                font-weight: 600;
+                font-size: 13px;
+                border: none;
+                height: 60px;
+                @include d-flex(row, center, center);
+                flex: 1;
+
+                &:nth-child(1) {
+                    background: $orange-color;
+                }
+
+                &:nth-child(2) {
+                    background: $blue-color;
+                }
+            }
+        }
 
         h1 {
             font-weight: 700;
@@ -36,7 +60,8 @@
         ul {
             font-size: 20px;
             font-weight: 400;
-            margin: 18px 0 20px 15px;
+            margin: 18px 0 20px;
+            list-style-position: inside;
             box-sizing: border-box;
         }
     }

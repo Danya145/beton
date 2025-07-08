@@ -1,0 +1,7 @@
+@use '../../variables.scss' as *;
+
+.container {
+    width: 100%;
+    @include d-flex(row);
+    flex-wrap: wrap;
+}
