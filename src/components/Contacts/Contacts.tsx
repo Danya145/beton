@@ -62,12 +62,15 @@ export const Contacts = () => {
       title: 'Заявка на бетон',
     };
 
+    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID);
+    console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+    console.log(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
     emailjs
       .send(
-        process.env.SERVICE_ID!,
-        process.env.TEMPLATE_ID!,
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
         templateParams,
-        process.env.PUBLIC_KEY!,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!,
       )
       .then(() => {
         alert('Письмо отправлено!');
