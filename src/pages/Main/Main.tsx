@@ -4,6 +4,7 @@ import { Products } from '@/components/Products/Products';
 import { Projects } from '@/components/Projects/Projects';
 
 import * as styles from './Main.module.scss';
+import { Contacts } from '@/components/Contacts/Contacts';
 
 export const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ export const MainPage = () => {
       <About />
       <Products />
       <Projects />
+      <Contacts />
     </main>
   );
 };

@@ -15,6 +15,10 @@ import Products1 from '@/assets/products1.png';
 import Products2 from '@/assets/products2.png';
 import Products3 from '@/assets/products3.png';
 import Products4 from '@/assets/products4.png';
+import Project1 from '@/assets/project1.png';
+import Project2 from '@/assets/project2.png';
+import Project3 from '@/assets/project3.png';
+import Project4 from '@/assets/project4.png';
 
 export const IMAGES = {
   Logo: Logo,
@@ -28,6 +32,10 @@ export const IMAGES = {
   Products2: Products2,
   Products3: Products3,
   Products4: Products4,
+  Project1: Project1,
+  Project2: Project2,
+  Project3: Project3,
+  Project4: Project4,
 };
 
 export const ICONS = {
@@ -38,3 +46,10 @@ export const ICONS = {
   BottomArrow: BottomArrow,
   RightArrow: RightArrow,
 };
+
+export const PROJECTS = [
+  { image: Project1 },
+  { image: Project2 },
+  { image: Project3 },
+  { image: Project4 }
+]
