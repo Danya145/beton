@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { useState } from 'react';
+
 import * as styles from './Contacts.module.scss';
 
 export const Contacts = () => {
@@ -61,16 +62,15 @@ export const Contacts = () => {
       title: 'Заявка на бетон',
     };
 
-
     emailjs
       .send(
         process.env.SERVICE_ID!,
         process.env.TEMPLATE_ID!,
         templateParams,
-        process.env.PUBLIC_KEY!
+        process.env.PUBLIC_KEY!,
       )
       .then(() => {
-        alert('Письмо отправлено!')
+        alert('Письмо отправлено!');
         setName('');
         setRawPhone('');
       })
@@ -85,18 +85,18 @@ export const Contacts = () => {
       <h1>Нужна консультация? Оставьте контакты – и мы с вами свяжемся!</h1>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder='Ваше имя'
-          type='text'
+          placeholder="Ваше имя"
+          type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          placeholder='+375(XX)XXX-XX-XX'
-          type='text'
+          placeholder="+375(XX)XXX-XX-XX"
+          type="text"
           value={formatPhone(rawPhone)}
           onChange={handlePhoneChange}
         />
-        <button type='submit'>заказать звонок</button>
+        <button type="submit">заказать звонок</button>
         {message && <p className={styles.errorMsg}>{message}</p>}
       </form>
     </section>

@@ -51,5 +51,5 @@ export const PROJECTS = [
   { image: Project1 },
   { image: Project2 },
   { image: Project3 },
-  { image: Project4 }
-]
+  { image: Project4 },
+];

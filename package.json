@@ -11,12 +11,14 @@
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.ts(x)?\"",
-    "pre-commit": "npm run lint:fix && npm run format && git add . && npm run build:prod"
+    "pre-commit": "npm run lint:fix && npm run format && git add . && npm run build:prod",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
     "emailjs-com": "^3.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -46,7 +48,7 @@
     "eslint-webpack-plugin": "^5.0.2",
     "globals": "^16.2.0",
     "html-webpack-plugin": "^5.6.3",
-    "husky": "^9.1.7",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.3",
     "jest-environment-jsdom": "^30.0.2",

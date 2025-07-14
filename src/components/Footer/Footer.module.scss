@@ -1,0 +1,32 @@
+@use '../../variables.scss' as *;
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    width: 100%;
+    background: $footer-color;
+
+    .logo {
+        flex: 1
+    }
+
+    .info {
+        flex: 3;
+        @include d-flex(row, center, space-between, 40px);
+
+        .adressess {
+            @include d-flex(column);
+        }
+
+        .contacts {
+            @include d-flex(column);
+        }
+
+        .socials {
+            @include d-flex(column);
+        }
+    }
+}

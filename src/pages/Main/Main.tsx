@@ -1,10 +1,11 @@
 import { About } from '@/components/About/About';
+import { Contacts } from '@/components/Contacts/Contacts';
+import { MapBlock } from '@/components/Map/Map';
 import { Poster } from '@/components/Poster/Poster';
 import { Products } from '@/components/Products/Products';
 import { Projects } from '@/components/Projects/Projects';
 
 import * as styles from './Main.module.scss';
-import { Contacts } from '@/components/Contacts/Contacts';
 
 export const MainPage = () => {
   return (
@@ -14,6 +15,7 @@ export const MainPage = () => {
       <Products />
       <Projects />
       <Contacts />
+      <MapBlock />
     </main>
   );
 };
