@@ -3,6 +3,11 @@
 .container {
     @include d-flex(row, center, center, 20px);
 
+    @media(max-width:1250px) {
+        gap: 10px;
+        min-width: 170px;
+    }
+
     .phones {
         font-weight: 400;
         font-size: 14px;

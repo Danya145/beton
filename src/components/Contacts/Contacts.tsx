@@ -1,5 +1,6 @@
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
+import InputMask from 'react-input-mask';
 
 import * as styles from './Contacts.module.scss';
 
@@ -8,22 +9,6 @@ export const Contacts = () => {
   const [name, setName] = useState('');
   const [rawPhone, setRawPhone] = useState('');
   const [message, setMessage] = useState('');
-
-  const formatPhone = (digits: string) => {
-    let formatted = PREFIX;
-    if (digits.length > 0) formatted += `(${digits.slice(0, 2)}`;
-    if (digits.length >= 2) formatted += `)`;
-    if (digits.length > 2) formatted += `${digits.slice(2, 5)}`;
-    if (digits.length > 5) formatted += `-${digits.slice(5, 7)}`;
-    if (digits.length > 7) formatted += `-${digits.slice(7, 9)}`;
-    return formatted;
-  };
-
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const input = e.target.value;
-    const digits = input.replace(/\D/g, '').replace(/^375/, '').slice(0, 9);
-    setRawPhone(digits);
-  };
 
   const validateName = (name: string): string | null => {
     const trimmed = name.trim();
@@ -62,9 +47,6 @@ export const Contacts = () => {
       title: 'Заявка на бетон',
     };
 
-    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID);
-    console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
-    console.log(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID!,
@@ -93,12 +75,13 @@ export const Contacts = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <input
-          placeholder="+375(XX)XXX-XX-XX"
-          type="text"
-          value={formatPhone(rawPhone)}
-          onChange={handlePhoneChange}
-        />
+        <InputMask
+          mask="+375(99)999-99-99"
+          value={rawPhone}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRawPhone(e.target.value)}
+        >
+          {(inputProps) => <input {...inputProps} type="text" placeholder="Ваш номер" />}
+        </InputMask>
         <button type="submit">заказать звонок</button>
         {message && <p className={styles.errorMsg}>{message}</p>}
       </form>

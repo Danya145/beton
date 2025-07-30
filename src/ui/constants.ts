@@ -4,13 +4,20 @@ import About3 from '@/assets/about3.png';
 import About4 from '@/assets/about4.png';
 import BgImage from '@/assets/bg-image.png';
 import BottomArrow from '@/assets/icons/bottom_arrow.svg';
+import Facebook from '@/assets/icons/Facebook.svg';
 import Hide from '@/assets/icons/hide.png';
+import Insta from '@/assets/icons/Instagram.svg';
 import LogoIcon from '@/assets/icons/logo.svg';
 import Phone from '@/assets/icons/phone.svg';
 import RightArrow from '@/assets/icons/right_arrow.svg';
+import TikTok from '@/assets/icons/Tiktok.svg';
 import View from '@/assets/icons/view.png';
 import Logo from '@/assets/logo.png';
 import LogoLight from '@/assets/logo_light.png';
+import Partners1 from '@/assets/partners1.png';
+import Partners2 from '@/assets/partners2.png';
+import Partners3 from '@/assets/partners3.png';
+import Partners4 from '@/assets/partners4.png';
 import Products1 from '@/assets/products1.png';
 import Products2 from '@/assets/products2.png';
 import Products3 from '@/assets/products3.png';
@@ -36,9 +43,16 @@ export const IMAGES = {
   Project2: Project2,
   Project3: Project3,
   Project4: Project4,
+  Partners1: Partners1,
+  Partners2: Partners2,
+  Partners3: Partners3,
+  Partners4: Partners4,
 };
 
 export const ICONS = {
+  Insta,
+  TikTok,
+  Facebook,
   View: View,
   Hide: Hide,
   Phone: Phone,

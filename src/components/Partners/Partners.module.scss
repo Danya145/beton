@@ -1,0 +1,32 @@
+.sliderWrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sliderTrack {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.slide {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

@@ -1,5 +1,7 @@
 import { About } from '@/components/About/About';
 import { Contacts } from '@/components/Contacts/Contacts';
+import { CustomMap } from '@/components/Map/Map';
+import { Partners } from '@/components/Partners/Partners';
 import { Poster } from '@/components/Poster/Poster';
 import { Products } from '@/components/Products/Products';
 import { Projects } from '@/components/Projects/Projects';
@@ -14,6 +16,8 @@ export const MainPage = () => {
       <Products />
       <Projects />
       <Contacts />
+      <Partners />
+      <CustomMap latitude={53.819609} longitude={27.696066} />
     </main>
   );
 };
