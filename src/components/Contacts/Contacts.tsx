@@ -66,7 +66,7 @@ export const Contacts = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="contacts">
       <h1>Нужна консультация? Оставьте контакты – и мы с вами свяжемся!</h1>
       <form onSubmit={handleSubmit}>
         <input
