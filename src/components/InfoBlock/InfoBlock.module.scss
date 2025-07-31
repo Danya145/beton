@@ -1,30 +1,22 @@
 @use '../../variables.scss' as *;
 
 .block {
-    width: 50%;
-    min-width: 500px;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 400px;
+    flex-direction: column;
 
     &.reverse {
-        flex-direction: row-reverse;
-    }
-
-    .image {
-        height: 100%;
-        width: 50%;
+        flex-direction: column-reverse;
     }
 
     .content {
-        color: $white-color;
-        box-sizing: border-box;
         padding: 35px 42px;
         flex: 1;
         height: 100%;
         width: 100%;
         background: $blue-color;
+        color: $white-color;
         @include d-flex(column, start, space-between, 27px);
 
         &.orange {

@@ -25,7 +25,13 @@ export const About = () => {
   const handleScrollToContacts = () => {
     const contactsSection = document.getElementById('contacts');
     if (contactsSection) {
-      contactsSection.scrollIntoView({ behavior: 'smooth' });
+      const offset = -100; // подняться на 100px выше элемента
+      const top = contactsSection.getBoundingClientRect().top + window.pageYOffset + offset;
+
+      window.scrollTo({
+        top,
+        behavior: 'smooth',
+      });
     }
   };
 

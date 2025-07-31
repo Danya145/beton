@@ -10,7 +10,7 @@ export interface InfoBlockProps {
   reverse: boolean;
 }
 
-export const InfoBlock = ({ header, list, link, image, reverse }: InfoBlockProps) => {
+export const InfoBlock = ({ header, list, link, reverse }: InfoBlockProps) => {
   return (
     <div className={`${styles.block} ${reverse ? styles.reverse : ''}`}>
       <div className={`${styles.content} ${reverse ? styles.orange : ''}`}>
@@ -24,7 +24,6 @@ export const InfoBlock = ({ header, list, link, image, reverse }: InfoBlockProps
           Подробнее <ICONS.RightArrow />
         </a>
       </div>
-      <img src={image} alt={header} className={styles.image} />
     </div>
   );
 };

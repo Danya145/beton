@@ -1,0 +1,9 @@
+@use '../../variables.scss' as *;
+
+.container {
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
