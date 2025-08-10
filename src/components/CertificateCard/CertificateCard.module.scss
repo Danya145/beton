@@ -1,0 +1,6 @@
+@use '../../variables.scss' as *;
+
+.container {
+    border-radius: 5px;
+    border: 1px solid $orange-color;
+}

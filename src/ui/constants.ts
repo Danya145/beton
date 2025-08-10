@@ -4,6 +4,7 @@ import About3 from '@/assets/about3.png';
 import About4 from '@/assets/about4.png';
 import BgImage from '@/assets/bg-image.png';
 import BottomArrow from '@/assets/icons/bottom_arrow.svg';
+import CertificateIcon from '@/assets/icons/certificate.svg';
 import Facebook from '@/assets/icons/Facebook.svg';
 import Hide from '@/assets/icons/hide.png';
 import Insta from '@/assets/icons/Instagram.svg';
@@ -59,6 +60,7 @@ export const ICONS = {
   Logo: LogoIcon,
   BottomArrow: BottomArrow,
   RightArrow: RightArrow,
+  CertificateIcon,
 };
 
 export const PROJECTS = [

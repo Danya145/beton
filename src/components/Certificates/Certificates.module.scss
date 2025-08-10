@@ -1,0 +1,15 @@
+@use '../../variables.scss' as *;
+
+.container {
+    background: green;
+
+    .divider {
+        width: 20%;
+        max-width: 200px;
+        height: 4px;
+    }
+
+    .certificates {
+        @include d-flex(row, center, center, 50px);
+    }
+}
