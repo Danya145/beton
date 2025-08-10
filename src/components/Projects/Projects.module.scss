@@ -2,8 +2,12 @@
 
 .container {
     overflow: hidden;
-    padding: 40px;
+    padding: 40px 0 120px;
     background-color: $blue-color;
+
+    @media (max-width:1450px) {
+        padding-bottom: 40px;
+    }
 }
 
 .header {
@@ -19,6 +23,7 @@
 
         @media(max-width:1250px) {
             font-size: 28px;
+            margin-bottom: 10px;
         }
     }
 
@@ -29,13 +34,20 @@
 
         @media(max-width:1250px) {
             font-size: 18px;
+            margin-top: 20px;
         }
     }
 
     .divider {
-        width: 20%;
-        height: 2px;
+        width: 15%;
+        max-width: 200px;
+        height: 4px;
         background: $white-color;
+
+        @media(max-width:1250px) {
+            max-width: 150px;
+            height: 2px;
+        }
     }
 }
 
@@ -43,6 +55,10 @@
     overflow-x: hidden;
     width: 100%;
     margin-top: 40px;
+
+    @media(max-width:1250px) {
+        margin-top: 30px;
+    }
 
     &:hover .sliderTrack {
         animation-play-state: paused;
@@ -75,7 +91,6 @@
         transition: transform 0.3s ease-in-out;
     }
 
-    // При наведении увеличивать изображение
     &:hover img {
         transform: scale(1.1);
     }

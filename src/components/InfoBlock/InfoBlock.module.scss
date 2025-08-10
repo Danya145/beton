@@ -11,26 +11,71 @@
     }
 
     .content {
+        box-sizing: border-box;
         padding: 35px 42px;
         flex: 1;
         height: 100%;
         width: 100%;
         background: $blue-color;
         color: $white-color;
-        @include d-flex(column, start, space-between, 27px);
+        @include d-flex(column, start, start, 27px);
+
+        @media (max-width:1600px) {
+            gap: 20px;
+        }
 
         &.orange {
             background: $orange-color;
         }
 
+        &.black {
+            color: $black-color;
+
+            a {
+                color: $black-color;
+            }
+        }
+
         h3 {
             font-size: 32px;
+            font-weight: 400;
+            white-space: normal;
+            word-break: normal;
+
+            @media (max-width:1450px) {
+                font-size: 25px;
+            }
+
+            span {
+                font-weight: 700;
+            }
         }
 
         ul {
-            list-style-position: inside;
+            list-style: none;
+            padding-left: 0;
+            //list-style-position: inside;
             @include d-flex(column, start, space-between, 23px);
             font-size: 24px;
+
+            @media (max-width:1600px) {
+                gap: 15px;
+            }
+
+            @media (max-width:1450px) {
+                font-size: 20px;
+            }
+
+            li {
+                position: relative;
+                padding-left: 20px;
+            }
+
+            li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+            }
         }
 
         a {
@@ -38,6 +83,11 @@
             font-weight: 700;
             color: $white-color;
             text-decoration: none;
+
+            @media (max-width:1450px) {
+                font-size: 15px;
+            }
+
 
             svg {
                 margin-left: 4px;

@@ -10,11 +10,11 @@ export const CustomMap = ({ latitude, longitude, zoom = 14 }: MapProps) => {
   const coordinates = [latitude, longitude];
 
   return (
-    <div style={{ width: '100%', height: '400px' }}>
+    <div style={{ width: '100%', height: '400px', marginTop: '-70px' }}>
       <YMaps
         query={{
-          lang: 'ru_RU', // Язык интерфейса
-          load: 'package.full', // Загружаем все модули, включая маршруты
+          lang: 'ru_RU',
+          load: 'package.full',
         }}
       >
         <Map

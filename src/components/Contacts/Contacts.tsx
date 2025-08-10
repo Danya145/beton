@@ -5,7 +5,6 @@ import InputMask from 'react-input-mask';
 import * as styles from './Contacts.module.scss';
 
 export const Contacts = () => {
-  const PREFIX = '+375';
   const [name, setName] = useState('');
   const [rawPhone, setRawPhone] = useState('');
   const [message, setMessage] = useState('');

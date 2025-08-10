@@ -7,14 +7,14 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); // 4 колонки
+    grid-template-columns: repeat(4, 1fr);
     gap: 0;
     width: 100%;
 }
 
 .gridItem {
     width: 100%;
-    aspect-ratio: 1 / 1; // делает ширину и высоту равными
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     display: flex;
 }

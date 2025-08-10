@@ -9,14 +9,15 @@ export const About = () => {
     if (isMobile) {
       window.location.href = 'tel:+375297501368';
     } else {
-      const phoneInput = document.getElementById('phone');
-      if (phoneInput) {
-        const links = phoneInput.querySelectorAll('a');
-        links.forEach((link) => link.classList.add(styles.highlight));
-        phoneInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.dispatchEvent(new CustomEvent('forceShowHeader'));
+
+      const phoneEl = document.getElementById('phone');
+      if (phoneEl) {
+        phoneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        phoneEl.classList.add(styles.highlight);
 
         setTimeout(() => {
-          links.forEach((link) => link.classList.remove(styles.highlight));
+          phoneEl.classList.remove(styles.highlight);
         }, 2000);
       }
     }
@@ -25,7 +26,7 @@ export const About = () => {
   const handleScrollToContacts = () => {
     const contactsSection = document.getElementById('contacts');
     if (contactsSection) {
-      const offset = -100; // подняться на 100px выше элемента
+      const offset = -100;
       const top = contactsSection.getBoundingClientRect().top + window.pageYOffset + offset;
 
       window.scrollTo({
@@ -36,7 +37,7 @@ export const About = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="about">
       <div className={styles.images}>
         <img src={IMAGES.About1} alt="" />
         <img src={IMAGES.About2} alt="" />

@@ -1,13 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface AlertPortalProps {
   type: 'success' | 'error' | 'info';
   message: string;
-  duration?: number;
 }
 
-export const AlertPortal = ({ type, message, duration = 3000 }: AlertPortalProps) => {
+export const AlertPortal = ({ type, message }: AlertPortalProps) => {
   return createPortal(
     <div
       style={{

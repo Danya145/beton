@@ -8,24 +8,30 @@ import * as styles from './Header.module.scss';
 
 export const Header = () => {
   const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    let lastY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      if (currentY > lastY && currentY > 100) {
         setShow(false);
       } else {
         setShow(true);
       }
-
-      setLastScrollY(currentScrollY);
+      lastY = currentY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleForceShow = () => setShow(true);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('forceShowHeader', handleForceShow);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('forceShowHeader', handleForceShow);
+    };
   }, []);
 
   return (
@@ -36,5 +42,3 @@ export const Header = () => {
     </header>
   );
 };
-
-//overflow-x

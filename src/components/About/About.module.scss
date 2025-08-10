@@ -27,6 +27,7 @@
             @include d-flex(row, center, space-between, 24px);
 
             button {
+                text-transform: uppercase;
                 color: $white-color;
                 font-weight: 600;
                 font-size: 13px;
