@@ -6,11 +6,14 @@ import BgImage from '@/assets/bg-image.png';
 import BottomArrow from '@/assets/icons/bottom_arrow.svg';
 import CertificateIcon from '@/assets/icons/certificate.svg';
 import Facebook from '@/assets/icons/Facebook.svg';
+import Gravij from '@/assets/icons/gravii.svg';
 import Hide from '@/assets/icons/hide.png';
 import Insta from '@/assets/icons/Instagram.svg';
+import Liquid from '@/assets/icons/liquid.svg';
 import LogoIcon from '@/assets/icons/logo.svg';
 import Phone from '@/assets/icons/phone.svg';
 import RightArrow from '@/assets/icons/right_arrow.svg';
+import Sheben from '@/assets/icons/sheben.svg';
 import TikTok from '@/assets/icons/Tiktok.svg';
 import View from '@/assets/icons/view.png';
 import Logo from '@/assets/logo.png';
@@ -61,7 +64,11 @@ export const ICONS = {
   BottomArrow: BottomArrow,
   RightArrow: RightArrow,
   CertificateIcon,
+  Sheben,
+  Gravij,
+  Liquid,
 };
+export type IconProps = typeof ICONS;
 
 export const PROJECTS = [
   { image: Project1 },
