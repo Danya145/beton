@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { ICONS } from '@/ui/constants';
 
 import * as styles from './InfoBlock.module.scss';
@@ -12,6 +14,7 @@ export interface InfoBlockProps {
 }
 
 export const InfoBlock = ({ header, list, link, reverse, isBlack = false }: InfoBlockProps) => {
+  const navigate = useNavigate();
   return (
     <div className={`${styles.block} ${reverse ? styles.reverse : ''}`}>
       <div
@@ -26,7 +29,7 @@ export const InfoBlock = ({ header, list, link, reverse, isBlack = false }: Info
             <li key={id}>{el}</li>
           ))}
         </ul>
-        <a href={link}>
+        <a onClick={() => navigate(link)}>
           Подробнее <ICONS.RightArrow fill={isBlack ? '#000' : '#fff'} />
         </a>
       </div>

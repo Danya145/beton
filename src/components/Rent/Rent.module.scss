@@ -1,0 +1,11 @@
+@use '../../variables.scss' as *;
+
+.container {
+    width: 100%;
+    padding: 0 170px;
+    box-sizing: border-box;
+
+    .rentBlocks {
+        @include d-flex(row, center, space-between, 95px);
+    }
+}

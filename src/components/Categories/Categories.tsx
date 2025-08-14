@@ -6,7 +6,7 @@ import * as styles from './Categories.module.scss';
 
 export const Categories = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="categories">
       <h1>Цены на бетон и растворы за куб</h1>
       <div className={styles.categories}>
         <CategoryBlock header="Бетон на щебне">

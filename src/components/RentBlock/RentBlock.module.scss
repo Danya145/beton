@@ -1,0 +1,52 @@
+@use '../../variables.scss' as *;
+
+.container {
+    width: 100%;
+    border: 3px solid $blue-color;
+    border-radius: 7px;
+    padding: 16px 40px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .divider {
+        width: 140px;
+        height: 4px;
+        background: $orange-color;
+    }
+
+    .rents {
+        margin-top: 30px;
+        @include d-flex(column, start, start, 30px);
+    }
+}
+
+.rentInfo {
+    @include d-flex(row, center, start);
+
+    >div {
+        @include d-flex(row, center, start);
+
+        .info {
+            margin-left: 25px;
+
+            p {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            span {
+                font-size: 16px;
+                font-weight: 500;
+                color: $gray-color;
+            }
+        }
+    }
+
+    .price {
+        color: red;
+    }
+}

@@ -14,11 +14,13 @@ export const MarkInfo = ({
   return (
     <div className={styles.markInfo}>
       <Icon width={40} height={30} />
-      <p>
-        {brand}
-        <span className={styles.subName}>{subName}</span>
-        <span className={styles.price}>{price}BYN</span>
-      </p>
+      <div>
+        <p>
+          {brand}
+          <span className={styles.subName}>{subName}</span>
+        </p>
+        <span className={styles.price}>{price}byn</span>
+      </div>
     </div>
   );
 };

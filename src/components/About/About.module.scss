@@ -21,6 +21,20 @@
 
         @include d-flex(column, start, space-between, 10px);
 
+        p {
+            span {
+                font-weight: 700;
+            }
+        }
+
+        ul {
+            li {
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+
         .buttons {
             width: 100%;
             margin-top: 50px;

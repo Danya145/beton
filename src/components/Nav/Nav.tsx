@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ICONS } from '@/ui/constants';
 
@@ -8,6 +8,7 @@ import * as styles from './Nav.module.scss';
 export const Nav = () => {
   const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -26,24 +27,44 @@ export const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Скроллим к #about, если пришли с состоянием
+  useEffect(() => {
+    if (location.state?.scrollTo === 'about') {
+      const el = document.getElementById('about');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [location]);
+
   return (
     <nav className={styles.nav}>
       <ul>
         <li onClick={() => navigate('/')}>главная</li>
         <li
           onClick={() => {
-            const el = document.getElementById('about');
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (location.pathname === '/') {
+              const el = document.getElementById('about');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             } else {
-              navigate('/#about');
+              navigate('/', { state: { scrollTo: 'about' } });
             }
           }}
         >
           о нас
         </li>
 
-        <li className={styles.dropdown} onMouseEnter={() => setHoveredDropdown('products')}>
+        <li
+          className={styles.dropdown}
+          onMouseEnter={() => setHoveredDropdown('products')}
+          onMouseLeave={(e) => {
+            if (!e.relatedTarget || !(e.relatedTarget as HTMLElement).closest(`.${styles.menu}`)) {
+              setHoveredDropdown(null);
+            }
+          }}
+        >
           продукция
           <span
             className={`${styles.arrow} ${hoveredDropdown === 'products' ? styles.rotated : ''}`}
