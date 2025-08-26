@@ -6,12 +6,11 @@
     display: flex;
     flex-direction: column;
     gap: 90px;
-}
-
-h1 {
+    
+    h1 {
     text-align: center;
-    color: $blue-color;
     font-size: 32px;
     font-weight: 600;
     margin: 45px 0;
+    }
 }

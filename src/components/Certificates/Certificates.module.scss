@@ -1,8 +1,11 @@
 @use '../../variables.scss' as *;
 
 .container {
-    background: green;
-
+    background: $blue-color;
+    height: 650px;
+    h1{
+        color: $white-color;
+    }
     .divider {
         width: 20%;
         max-width: 200px;
@@ -10,6 +13,6 @@
     }
 
     .certificates {
-        @include d-flex(row, center, center, 50px);
+        @include d-flex(row, start, center, 50px);
     }
 }

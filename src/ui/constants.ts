@@ -9,6 +9,7 @@ import CertificateIcon from '@/assets/icons/certificate.svg';
 import Facebook from '@/assets/icons/Facebook.svg';
 import Gravij from '@/assets/icons/gravii.svg';
 import Hide from '@/assets/icons/hide.png';
+import Info from '@/assets/icons/info.svg';
 import Insta from '@/assets/icons/Instagram.svg';
 import Liquid from '@/assets/icons/liquid.svg';
 import LogoIcon from '@/assets/icons/logo.svg';
@@ -75,6 +76,7 @@ export const ICONS = {
   Mixer,
   AutoPump,
   StaticPump,
+  Info,
 };
 export type IconProps = typeof ICONS;
 
@@ -85,3 +87,23 @@ export const PROJECTS = [
   { image: Project4 },
   { image: Project5 },
 ];
+
+export const brandOptions: Record<string, { value: string; label: string; price: number }[]> = {
+  gravel: [
+    { value: 'm150', label: 'М150 (гравий)', price: 135 },
+    { value: 'm200', label: 'М200 (гравий)', price: 140 },
+    { value: 'm250', label: 'М250 (гравий)', price: 145 },
+    { value: 'm300', label: 'М300 (гравий)', price: 150 },
+  ],
+  crushedStone: [
+    { value: 'm200', label: 'М200 (щебень)', price: 180 },
+    { value: 'm250', label: 'М250 (щебень)', price: 185 },
+    { value: 'm300', label: 'М300 (щебень)', price: 190 },
+    { value: 'm350', label: 'М350 (щебень)', price: 195 },
+    { value: 'm400', label: 'М400 (щебень)', price: 200 },
+    { value: 'm450', label: 'М450 (щебень)', price: 205 },
+    { value: 'm5ы00', label: 'М500 (щебень)', price: 210 },
+  ],
+};
+
+export const COST_PER_KM = 10;

@@ -1,6 +1,50 @@
 @use '../../variables.scss' as *;
 
 .container {
-    border-radius: 5px;
-    border: 1px solid $orange-color;
+    border-radius: 7px;
+    max-width:380px;
+    @include d-flex(column,center,start,21px);
+    
+    .icon{
+        cursor: zoom-in;
+        border: 5px solid $orange-color;
+        box-sizing: border-box;
+        padding: 41px 0 41px 25px;
+        height: 320px;
+        min-width: 230px;
+
+        svg{
+            width: 100%;
+            height: 100%;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    p{
+        text-align: center;
+        font-size: 24px;
+        color: $white-color;
+        font-weight: 600;
+    }
+
+    
 }
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    @include d-flex(row,center,center);
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+  
+  .fullImage {
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  }

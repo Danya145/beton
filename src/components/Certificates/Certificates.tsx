@@ -1,9 +1,11 @@
+import { IMAGES } from '@/ui/constants';
+
 import { CertificateCard } from '../CertificateCard/CertificateCard';
 import * as styles from './Certificates.module.scss';
 const CERTIFICATES_INFO = [
   {
     name: 'Сертификат соотвествия',
-    image: '',
+    image: IMAGES.Project1,
   },
   {
     name: 'Свидетельство о технической компетентности',
