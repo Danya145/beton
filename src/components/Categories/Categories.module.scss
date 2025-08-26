@@ -1,9 +1,14 @@
 @use '../../variables.scss' as *;
 
 .container {
-h1{
-    color: $blue-color;
-}
+    h1 {
+        color: $blue-color;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        margin: 45px 0;
+    }
+
     .categories {
         @include d-flex(row, center, center, 65px);
         margin: 0 95px;

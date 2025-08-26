@@ -138,7 +138,7 @@ export const Calculator = () => {
             >
               Рассчитать
             </Button>
-            <p className={styles.result}>Итого: {countRes} у.е.</p>
+            <p className={styles.result}>Итого: {countRes} byn</p>
           </div>
         </div>
         <div className={styles.extraInfo}>
