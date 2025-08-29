@@ -3,6 +3,10 @@ import About2 from '@/assets/about2.png';
 import About3 from '@/assets/about3.png';
 import About4 from '@/assets/about4.png';
 import BgImage from '@/assets/bg-image.png';
+import Certificate1 from '@/assets/certificate1.jpg';
+import Certificate2 from '@/assets/certificate2.jpg';
+import Certificate31 from '@/assets/certificate31.jpg';
+import Certificate32 from '@/assets/certificate32.jpg';
 import AutoPump from '@/assets/icons/auto-pump.svg';
 import BottomArrow from '@/assets/icons/bottom_arrow.svg';
 import CertificateIcon from '@/assets/icons/certificate.svg';
@@ -57,6 +61,10 @@ export const IMAGES = {
   Partners2,
   Partners3,
   Partners4,
+  Certificate1,
+  Certificate2,
+  Certificate31,
+  Certificate32,
 };
 
 export const ICONS = {
@@ -87,23 +95,3 @@ export const PROJECTS = [
   { image: Project4 },
   { image: Project5 },
 ];
-
-export const brandOptions: Record<string, { value: string; label: string; price: number }[]> = {
-  gravel: [
-    { value: 'm150', label: 'М150 (гравий)', price: 135 },
-    { value: 'm200', label: 'М200 (гравий)', price: 140 },
-    { value: 'm250', label: 'М250 (гравий)', price: 145 },
-    { value: 'm300', label: 'М300 (гравий)', price: 150 },
-  ],
-  crushedStone: [
-    { value: 'm200', label: 'М200 (щебень)', price: 180 },
-    { value: 'm250', label: 'М250 (щебень)', price: 185 },
-    { value: 'm300', label: 'М300 (щебень)', price: 190 },
-    { value: 'm350', label: 'М350 (щебень)', price: 195 },
-    { value: 'm400', label: 'М400 (щебень)', price: 200 },
-    { value: 'm450', label: 'М450 (щебень)', price: 205 },
-    { value: 'm5ы00', label: 'М500 (щебень)', price: 210 },
-  ],
-};
-
-export const COST_PER_KM = 10;

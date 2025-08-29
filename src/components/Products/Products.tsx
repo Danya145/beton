@@ -54,7 +54,7 @@ const INFO_BLOCKS: InfoBlockProps[] = [
 
 export const Products = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id={'products'}>
       <div className={styles.grid}>
         {INFO_BLOCKS.slice(0, 1).map((item, index) => (
           <div key={`block-${index}`} className={styles.gridItem}>

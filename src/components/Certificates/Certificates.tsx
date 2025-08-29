@@ -5,15 +5,15 @@ import * as styles from './Certificates.module.scss';
 const CERTIFICATES_INFO = [
   {
     name: 'Сертификат соотвествия',
-    image: IMAGES.Project1,
+    image: [IMAGES.Certificate1],
   },
   {
     name: 'Свидетельство о технической компетентности',
-    image: '',
+    image: [IMAGES.Certificate31, IMAGES.Certificate32],
   },
   {
     name: 'Сертификат соотвествия',
-    image: '',
+    image: [IMAGES.Certificate2],
   },
 ];
 export const Certificates = () => {

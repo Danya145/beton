@@ -55,15 +55,7 @@ export const Nav = () => {
           о нас
         </li>
 
-        <li
-          className={styles.dropdown}
-          onMouseEnter={() => setHoveredDropdown('products')}
-          onMouseLeave={(e) => {
-            if (!e.relatedTarget || !(e.relatedTarget as HTMLElement).closest(`.${styles.menu}`)) {
-              setHoveredDropdown(null);
-            }
-          }}
-        >
+        <li className={styles.dropdown} onMouseEnter={() => setHoveredDropdown('products')}>
           продукция
           <span
             className={`${styles.arrow} ${hoveredDropdown === 'products' ? styles.rotated : ''}`}
@@ -71,11 +63,22 @@ export const Nav = () => {
             <ICONS.BottomArrow />
           </span>
           {hoveredDropdown === 'products' && (
-            <ul className={styles.menu} onMouseLeave={() => setHoveredDropdown(null)}>
-              <li>Бетон</li>
-              <li>Раствор</li>
-              <li>Щебень</li>
-              <li>Песок</li>
+            <ul
+              className={styles.menu}
+              onMouseLeave={() => setHoveredDropdown(null)}
+              onClick={() => {
+                if (location.pathname === '/') {
+                  const el = document.getElementById('products');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                } else {
+                  navigate('/', { state: { scrollTo: 'products' } });
+                }
+              }}
+            >
+              <li>Бетон на гравии</li>
+              <li>Бетон на щебне</li>
             </ul>
           )}
         </li>
@@ -89,9 +92,8 @@ export const Nav = () => {
           </span>
           {hoveredDropdown === 'services' && (
             <ul className={styles.menu} onMouseLeave={() => setHoveredDropdown(null)}>
-              <li>Аренда техники</li>
-              <li>Заливка бетона</li>
-              <li>Планировка участка</li>
+              <li>Аренда техники с оператором</li>
+              <li>Аренда техники без оператором</li>
             </ul>
           )}
         </li>

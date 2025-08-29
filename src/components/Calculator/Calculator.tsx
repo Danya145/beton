@@ -10,7 +10,8 @@ import {
 import { useCallback, useState } from 'react';
 
 import { useAlert } from '@/ui/Alert/useAlert';
-import { brandOptions, COST_PER_KM, ICONS } from '@/ui/constants';
+import { ICONS } from '@/ui/constants';
+import { brandOptions, COST_PER_KM } from '@/utils/db';
 
 import * as styles from './Calculator.module.scss';
 
