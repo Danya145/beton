@@ -27,7 +27,6 @@ export const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Скроллим к #about, если пришли с состоянием
   useEffect(() => {
     if (location.state?.scrollTo === 'about') {
       const el = document.getElementById('about');

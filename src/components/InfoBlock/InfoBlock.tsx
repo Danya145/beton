@@ -29,7 +29,12 @@ export const InfoBlock = ({ header, list, link, reverse, isBlack = false }: Info
             <li key={id}>{el}</li>
           ))}
         </ul>
-        <a onClick={() => navigate(link)}>
+        <a
+          onClick={() => {
+            navigate(link);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           Подробнее <ICONS.RightArrow fill={isBlack ? '#000' : '#fff'} />
         </a>
       </div>
