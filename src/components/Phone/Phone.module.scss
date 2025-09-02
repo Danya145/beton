@@ -11,7 +11,7 @@
     .phones {
         font-weight: 400;
         font-size: 14px;
-        @include d-flex(column, center, center, 8px);
+        @include d-flex(column, end, center, 8px);
 
         a {
             text-decoration: none;

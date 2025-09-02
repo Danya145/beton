@@ -22,7 +22,14 @@ export const RentInfo = ({ Icon, name, extraInfo, prices }: RentInfoProps) => {
         {prices.map((price, index) => (
           <p key={index}>
             {price.name}{' '}
-            <span style={{ paddingLeft: /\d/.test(price.cost) ? '30px' : 0 }}>{price.cost}</span>
+            <span
+              style={{
+                paddingLeft: /\d/.test(price.cost) ? '30px' : 0,
+                fontWeight: /\d/.test(price.cost) ? 600 : 500,
+              }}
+            >
+              {price.cost}
+            </span>
           </p>
         ))}
       </div>

@@ -37,6 +37,12 @@
                 font-size: 16px;
             }
         }
+        p {
+            span {
+                color: $orange-color;
+                font-weight: 700;
+            }
+        }
     }
 
     .info {
@@ -86,7 +92,7 @@
         .socials {
             min-width: 100px;
             flex: 2;
-            @include d-flex(column);
+            @include d-flex(column,start);
 
             >div {
                 @include d-flex(row, center, space-between, 5px);

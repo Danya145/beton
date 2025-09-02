@@ -19,7 +19,7 @@ export const MarkInfo = ({
           {brand}
           <span className={styles.subName}>{subName}</span>
         </p>
-        <span className={styles.price}>{price}byn</span>
+        <span className={styles.price}>{price} byn</span>
       </div>
     </div>
   );

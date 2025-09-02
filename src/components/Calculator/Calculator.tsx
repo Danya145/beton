@@ -63,7 +63,7 @@ export const Calculator = () => {
   }, []);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="calculator">
       <div className={styles.calculator_wrapper}>
         <div className={styles.calculator}>
           <h1>Калькулятор стоимости</h1>
@@ -132,9 +132,13 @@ export const Calculator = () => {
             />
             <Button
               variant="contained"
-              color="primary"
               onClick={handleCalculate}
-              sx={{ width: '40%', height: '50px' }}
+              sx={{
+                width: '40%',
+                height: '50px',
+                backgroundColor: 'rgb(42, 95, 158)',
+                mt: '25px',
+              }}
               disabled={!distance || !volume || !brand || !type}
             >
               Рассчитать

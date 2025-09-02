@@ -28,10 +28,15 @@ export const Nav = () => {
   }, []);
 
   useEffect(() => {
-    if (location.state?.scrollTo === 'about') {
-      const el = document.getElementById('about');
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const y =
+          el.getBoundingClientRect().top +
+          window.pageYOffset -
+          location.state.nmt +
+          location.state.pmt;
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
   }, [location]);
@@ -39,16 +44,22 @@ export const Nav = () => {
   return (
     <nav className={styles.nav}>
       <ul>
-        <li onClick={() => navigate('/')}>главная</li>
+        <li
+          onClick={() => {
+            navigate('/');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          главная
+        </li>
         <li
           onClick={() => {
             if (location.pathname === '/') {
               const el = document.getElementById('about');
-              if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
+              const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+              window.scrollTo({ top: y, behavior: 'smooth' });
             } else {
-              navigate('/', { state: { scrollTo: 'about' } });
+              navigate('/', { state: { scrollTo: 'about', nmt: 90, pmt: 0 } });
             }
           }}
         >
@@ -67,13 +78,14 @@ export const Nav = () => {
               className={styles.menu}
               onMouseLeave={() => setHoveredDropdown(null)}
               onClick={() => {
-                if (location.pathname === '/') {
-                  const el = document.getElementById('products');
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
+                if (location.pathname !== '/') {
+                  navigate('/', {
+                    state: { scrollTo: 'products', nmt: 90, pmt: 0 },
+                  });
                 } else {
-                  navigate('/', { state: { scrollTo: 'products' } });
+                  const el = document.getElementById('products');
+                  const y = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
             >
@@ -91,15 +103,50 @@ export const Nav = () => {
             <ICONS.BottomArrow />
           </span>
           {hoveredDropdown === 'services' && (
-            <ul className={styles.menu} onMouseLeave={() => setHoveredDropdown(null)}>
+            <ul
+              className={styles.menu}
+              onMouseLeave={() => setHoveredDropdown(null)}
+              onClick={() => {
+                if (location.pathname !== '/') {
+                  navigate('/', {
+                    state: { scrollTo: 'products', pmt: 200, nmt: 0 },
+                  });
+                } else {
+                  const el = document.getElementById('products');
+                  const y = el.getBoundingClientRect().top + window.pageYOffset + 200;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+            >
               <li>Аренда техники с оператором</li>
               <li>Аренда техники без оператором</li>
             </ul>
           )}
         </li>
 
-        <li onClick={() => navigate('/price')}>цены</li>
-        <li onClick={() => navigate('/price')}>доставка</li>
+        <li
+          onClick={() => {
+            if (location.pathname !== '/price') {
+              navigate('/price');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          цены
+        </li>
+        <li
+          onClick={() => {
+            if (location.pathname !== '/price') {
+              navigate('/price', {
+                state: { scrollTo: 'calculator', pmt: 0, nmt: 0 },
+              });
+            }
+            const el = document.getElementById('calculator');
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        >
+          доставка
+        </li>
       </ul>
     </nav>
   );
