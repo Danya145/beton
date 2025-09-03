@@ -1,0 +1,60 @@
+@use '../../variables.scss' as *;
+
+.container {
+    max-width: 500px;
+    min-width: 250px;
+    height: 415px;
+    border: 3px solid $orange-color;
+    border-radius: 7px;
+    padding: 16px;
+    @include d-flex(column, start, start);
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.divider {
+    height: 4px;
+    background-color: $orange-color;
+    width: 60px;
+    margin: 15px 0 30px;
+}
+
+.content {
+    @include d-flex(column, start, start, 21px);
+    width: 100%;
+}
+
+.markInfo {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+
+    >div {
+        @include d-flex(row, center, space-between);
+        width: 100%;
+
+        p {
+            @include d-flex(row, center, start, 2px);
+            font-size: 20px;
+            font-weight: 600;
+
+            .subName {
+                color: $gray-color;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 600;
+            color: $orange-color;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+import { IMAGES } from '@/ui/constants';
+
+import { CertificateCard } from '../CertificateCard/CertificateCard';
+import * as styles from './Certificates.module.scss';
+const CERTIFICATES_INFO = [
+  {
+    name: 'Сертификат соотвествия',
+    image: [IMAGES.Certificate1],
+  },
+  {
+    name: 'Свидетельство о технической компетентности',
+    image: [IMAGES.Certificate31, IMAGES.Certificate32],
+  },
+  {
+    name: 'Сертификат соотвествия',
+    image: [IMAGES.Certificate2],
+  },
+];
+export const Certificates = () => {
+  return (
+    <div className={styles.container}>
+      <h1>Сертификаты качества</h1>
+      <div className={styles.divider}></div>
+      <div className={styles.certificates}>
+        {CERTIFICATES_INFO.map((item, index) => (
+          <CertificateCard {...item} key={index} />
+        ))}
+      </div>
+    </div>
+  );
+};

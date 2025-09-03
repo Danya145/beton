@@ -3,14 +3,28 @@
 .container {
     @include d-flex(row, center, center, 20px);
 
+    @media(max-width:1250px) {
+        gap: 10px;
+        min-width: 170px;
+    }
+
     .phones {
         font-weight: 400;
         font-size: 14px;
-        @include d-flex(column, center, center, 8px);
+        @include d-flex(column, end, center, 8px);
 
         a {
             text-decoration: none;
             color: $black-color;
         }
     }
+}
+
+.clickable {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.clickable:hover {
+    color: #007bff;
 }

@@ -1,0 +1,52 @@
+@use '../../variables.scss' as *;
+
+.container {
+  height: 550px;
+  @include d-flex(column, center, center);
+
+  .calculator_wrapper {
+    @include d-flex(column, start, start);
+
+    .calculator {
+      border: 5px solid $orange-color;
+      border-radius: 7px;
+      padding: 50px 120px;
+      max-width: 1000px;
+      box-sizing: border-box;
+
+      h1 {
+        font-size: 40px;
+        font-weight: 600;
+        color: $orange-color;
+        margin: 0;
+        margin-bottom: 50px;
+        text-align: center
+      }
+
+      .countForm {
+        @include d-flex(row, center, space-between, 25px);
+        flex-wrap: wrap;
+
+        .result {
+          width: 40%;
+          font-size: 40px;
+          font-weight: 600;
+          color: $orange-color;
+          align-self: end;
+        }
+      }
+    }
+
+    .extraInfo {
+      margin-top: 10px;
+      @include d-flex(row, center, start, 5px);
+
+      p {
+        >span {
+          cursor: pointer;
+          color: $blue-color;
+        }
+      }
+    }
+  }
+}

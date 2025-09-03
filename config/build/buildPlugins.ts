@@ -10,7 +10,7 @@ import { BuildOptions } from "./types/types";
 
 export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plugins'] {
     const isDev = mode === 'development';
-    const envVars = dotenv.config().parsed || {};
+    dotenv.config();
 
     const plugins: Configuration['plugins'] = [
         new HtmlWebpackPlugin({
@@ -24,7 +24,9 @@ export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plug
             failOnError: false,
         }),
         new webpack.DefinePlugin({
-            'process.env': JSON.stringify(envVars),
+            'process.env.REACT_APP_EMAILJS_SERVICE_ID': JSON.stringify(process.env.REACT_APP_EMAILJS_SERVICE_ID),
+            'process.env.REACT_APP_EMAILJS_TEMPLATE_ID': JSON.stringify(process.env.REACT_APP_EMAILJS_TEMPLATE_ID),
+            'process.env.REACT_APP_EMAILJS_PUBLIC_KEY': JSON.stringify(process.env.REACT_APP_EMAILJS_PUBLIC_KEY),
         }),
     ]
     if (isDev) {

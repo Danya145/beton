@@ -1,10 +1,11 @@
 @use '../../variables.scss' as *;
 
 .container {
-    @include d-flex(row, center, space-between, 24px);
+    @include d-flex(row, start, space-between, 24px);
     height: 750px;
     width: 90%;
     margin: 0 auto;
+    box-sizing: border-box;
 
     .images {
         @include d-flex(column, center, center, 24px);
@@ -14,30 +15,112 @@
     }
 
     .info {
+        flex: 1;
         box-sizing: border-box;
+        min-height: 100%;
+
+        @include d-flex(column, start, space-between, 10px);
+
+        p {
+            span {
+                font-weight: 700;
+            }
+        }
+
+        ul {
+            li {
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .buttons {
+            width: 100%;
+            margin-top: 50px;
+            @include d-flex(row, center, space-between, 24px);
+
+            button {
+                text-transform: uppercase;
+                color: $white-color;
+                font-weight: 600;
+                font-size: 13px;
+                border: none;
+                height: 60px;
+                cursor: pointer;
+                @include d-flex(row, center, center);
+                flex: 1;
+
+                &:nth-child(1) {
+                    background: $orange-color;
+                }
+
+                &:nth-child(2) {
+                    background: $blue-color;
+                }
+            }
+        }
 
         h1 {
             font-weight: 700;
             font-size: 40px;
             margin-bottom: 30px;
+
+            @media(max-width:1250px) {
+                font-size: 35px;
+                margin-bottom: 20px;
+            }
         }
 
         p {
             font-weight: 400;
             font-size: 20px;
+
+            @media(max-width:1250px) {
+                font-size: 18px;
+            }
         }
 
         h6 {
             font-size: 20px;
             font-weight: 600;
             margin-top: 20px;
+
+            @media(max-width:1250px) {
+                font-size: 18px;
+                margin-top: 15px;
+            }
         }
 
         ul {
             font-size: 20px;
             font-weight: 400;
-            margin: 18px 0 20px 15px;
+            margin: 18px 0 20px;
+            list-style-position: inside;
             box-sizing: border-box;
+
+            @media(max-width:1250px) {
+                font-size: 18px;
+                margin-top: 10px;
+            }
         }
+    }
+}
+
+.highlight {
+    animation: pulse 1s ease-in-out 3;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }

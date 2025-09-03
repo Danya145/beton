@@ -1,0 +1,108 @@
+@use '../../variables.scss' as *;
+
+.container {
+    overflow: hidden;
+    padding: 40px 0 120px;
+    background-color: $blue-color;
+
+    @media (max-width:1450px) {
+        padding-bottom: 40px;
+    }
+}
+
+.header {
+    color: $white-color;
+    text-align: center;
+
+    @include d-flex(column, center);
+
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+        @media(max-width:1250px) {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+    }
+
+    p {
+        color: $white-color;
+        margin-top: 40px;
+        font-size: 22px;
+
+        @media(max-width:1250px) {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    }
+
+    .divider {
+        width: 15%;
+        max-width: 200px;
+        height: 4px;
+        background: $white-color;
+
+        @media(max-width:1250px) {
+            max-width: 150px;
+            height: 2px;
+        }
+    }
+}
+
+.sliderWrapper {
+    overflow-x: hidden;
+    width: 100%;
+    margin-top: 40px;
+
+    @media(max-width:1250px) {
+        margin-top: 30px;
+    }
+
+    &:hover .sliderTrack {
+        animation-play-state: paused;
+    }
+}
+
+.sliderTrack {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.slide {
+    flex: 0 0 auto;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+
+    img {
+        height: 100%;
+        width: auto;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,27 @@
+@use '../../variables.scss' as *;
+
+.container {
+    background: $blue-color;
+    height: 650px;
+
+    @include d-flex(column, center, start);
+
+    h1 {
+        color: $white-color;
+        font-size: 32px;
+        font-weight: 600;
+        margin: 45px 0 20px;
+    }
+
+    .divider {
+        width: 20%;
+        max-width: 200px;
+        height: 4px;
+        margin-bottom: 70px;
+        background-color: $orange-color
+    }
+
+    .certificates {
+        @include d-flex(row, start, center, 50px);
+    }
+}

@@ -1,7 +1,11 @@
 @use '../../variables.scss' as *;
 
 .header {
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     padding: 0 120px;
     box-sizing: border-box;
     width: 100%;
@@ -11,4 +15,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease-in-out;
+
+    @media(max-width:1250px) {
+        padding: 0 80px;
+    }
+
+    @media(max-width:1050px) {
+        padding: 0 30px;
+    }
+}
+
+.hidden {
+    transform: translateY(-100%);
 }
