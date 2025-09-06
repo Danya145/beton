@@ -6,12 +6,26 @@
     width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
+    @media(max-width:700px) {
+        height: 500px;
+    }
 
     .images {
         @include d-flex(column, center, center, 24px);
         flex-wrap: wrap;
         height: 100%;
         box-sizing: border-box;
+
+        @media(max-width:1100px) {
+            flex-wrap: nowrap;
+            width: 30%;
+            img{
+                max-width: 200px;
+                max-height: 250px;
+                width: 100%;
+                height: 30%;
+            }
+        }
     }
 
     .info {
@@ -39,6 +53,9 @@
             width: 100%;
             margin-top: 50px;
             @include d-flex(row, center, space-between, 24px);
+            @media(max-width:700px) {
+                margin-top: 0;
+            }
 
             button {
                 text-transform: uppercase;
@@ -50,6 +67,7 @@
                 cursor: pointer;
                 @include d-flex(row, center, center);
                 flex: 1;
+                border-radius: 0;
 
                 &:nth-child(1) {
                     background: $orange-color;
@@ -70,6 +88,10 @@
                 font-size: 35px;
                 margin-bottom: 20px;
             }
+            @media(max-width:700px) {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
         }
 
         p {
@@ -78,6 +100,9 @@
 
             @media(max-width:1250px) {
                 font-size: 18px;
+            }
+            @media(max-width:700px) {
+                font-size: 14px;
             }
         }
 
@@ -102,6 +127,9 @@
             @media(max-width:1250px) {
                 font-size: 18px;
                 margin-top: 10px;
+            }
+            @media(max-width:700px) {
+                font-size: 14px;
             }
         }
     }
