@@ -23,6 +23,14 @@
         @media (max-width:1600px) {
             gap: 20px;
         }
+        @media (max-width:1150px) {
+            gap: 15px;
+        }
+        @media (max-width:950px) {
+            gap: 10px;
+            padding: 25px;
+            position: relative;
+        }
 
         &.orange {
             background: $orange-color;
@@ -45,6 +53,12 @@
             @media (max-width:1450px) {
                 font-size: 25px;
             }
+            @media (max-width:1150px) {
+                font-size: 18px;
+            }
+            @media (max-width:950px) {
+                font-size: 15px;
+            }
 
             span {
                 font-weight: 700;
@@ -64,6 +78,14 @@
 
             @media (max-width:1450px) {
                 font-size: 20px;
+            }
+            @media (max-width:1150px) {
+                font-size: 15px;
+                gap: 10px;
+            }
+            @media (max-width:950px) {
+                font-size: 13px;
+                gap: 5px;
             }
 
             li {
@@ -88,6 +110,11 @@
 
             @media (max-width:1450px) {
                 font-size: 15px;
+            }
+            @media (max-width:950px) {
+                font-size: 13px;
+                position: absolute;
+                bottom:25px;
             }
 
 
