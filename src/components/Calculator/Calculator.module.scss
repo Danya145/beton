@@ -3,6 +3,9 @@
 .container {
   height: 550px;
   @include d-flex(column, center, center);
+  @media (max-width: 1050px) {
+    margin: 0 30px;
+}
 
   .calculator_wrapper {
     @include d-flex(column, start, start);
@@ -20,12 +23,28 @@
         color: $orange-color;
         margin: 0;
         margin-bottom: 50px;
-        text-align: center
+        text-align: center;
+        @media (max-width: 900px) {
+          margin-bottom: 20px;
+      }
       }
 
       .countForm {
         @include d-flex(row, center, space-between, 25px);
         flex-wrap: wrap;
+
+        @media (max-width: 900px) {
+          display: grid;
+          grid-template-areas: 
+          'type type'
+          'mark mark'
+          'volume volume'
+          'dist dist'
+          'btn res';
+          justify-content: center;
+          gap: 20px;
+          min-width: 100%;
+      }
 
         .result {
           width: 40%;
@@ -33,6 +52,9 @@
           font-weight: 600;
           color: $orange-color;
           align-self: end;
+          @media (max-width: 900px) {
+            width: 100%;
+        }
         }
       }
     }

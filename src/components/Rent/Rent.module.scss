@@ -5,6 +5,15 @@
     padding: 0 170px;
     box-sizing: border-box;
     margin-top: -90px;
+    @media (max-width: 1200px) {
+        padding: 0 100px;
+    }
+    @media (max-width: 1000px) {
+        padding: 0 50px;
+    }
+    @media (max-width: 850px) {
+        padding: 0 30px;
+    }
 
     h1 {
         color: $blue-color;
@@ -19,6 +28,13 @@
         height: 305px;
         @media(max-width:1450px){
             height: 340px;
+        }
+        @media (max-width: 1000px) {
+            gap: 30px;
+        }
+        @media (max-width: 800px) {
+            flex-direction: column;
+            height: 700px;
         }
     }
 }
