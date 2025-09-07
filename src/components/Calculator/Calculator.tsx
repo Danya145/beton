@@ -32,12 +32,16 @@ export const Calculator = () => {
       return;
     }
 
-    const pricePerCube = brandOptions[type].find((b) => b.value === brand)?.price ?? 0;
+    const pricePerCube =
+      brandOptions[type].find(b => b.value === brand)?.price ?? 0;
     const total = pricePerCube * volumeValue + distanceValue * COST_PER_KM;
     setCountRes(total);
   };
 
-  const handleNumberInput = (val: string, setter: React.Dispatch<React.SetStateAction<string>>) => {
+  const handleNumberInput = (
+    val: string,
+    setter: React.Dispatch<React.SetStateAction<string>>,
+  ) => {
     if (/^[0-9]*[,]?[0-9]*$/.test(val)) {
       setter(val);
     }
@@ -72,8 +76,7 @@ export const Calculator = () => {
               sx={{
                 width: '40%',
               }}
-              size="small"
-            >
+              size="small">
               <InputLabel>Тип бетона</InputLabel>
               <Select
                 value={type}
@@ -81,8 +84,7 @@ export const Calculator = () => {
                 onChange={(e: SelectChangeEvent<string>) => {
                   setType(e.target.value);
                   setBrand('');
-                }}
-              >
+                }}>
                 <MenuItem value="gravel">На гравии</MenuItem>
                 <MenuItem value="crushedStone">На щебне</MenuItem>
               </Select>
@@ -92,16 +94,16 @@ export const Calculator = () => {
                 width: '40%',
               }}
               disabled={!type}
-              size="small"
-            >
+              size="small">
               <InputLabel>Марка бетона</InputLabel>
               <Select
                 value={brand}
                 label="Марка бетона"
-                onChange={(e: SelectChangeEvent<string>) => setBrand(e.target.value)}
-              >
+                onChange={(e: SelectChangeEvent<string>) =>
+                  setBrand(e.target.value)
+                }>
                 {type &&
-                  brandOptions[type].map((b) => (
+                  brandOptions[type].map(b => (
                     <MenuItem key={b.value} value={b.value}>
                       {b.label}
                     </MenuItem>
@@ -139,8 +141,7 @@ export const Calculator = () => {
                 backgroundColor: 'rgb(42, 95, 158)',
                 mt: '25px',
               }}
-              disabled={!distance || !volume || !brand || !type}
-            >
+              disabled={!distance || !volume || !brand || !type}>
               Рассчитать
             </Button>
             <p className={styles.result}>Итого: {countRes} byn</p>

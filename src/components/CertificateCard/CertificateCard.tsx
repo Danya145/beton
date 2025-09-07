@@ -23,7 +23,7 @@ export const CertificateCard = ({ name, image }: CertificateCardProps) => {
       </div>
       {open && (
         <div className={styles.modal} onClick={handleClose}>
-          {image.map((el) => (
+          {image.map(el => (
             <img src={el} alt={name} className={styles.fullImage} key={el} />
           ))}
         </div>

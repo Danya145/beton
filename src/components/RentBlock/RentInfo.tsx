@@ -26,8 +26,7 @@ export const RentInfo = ({ Icon, name, extraInfo, prices }: RentInfoProps) => {
               style={{
                 paddingLeft: /\d/.test(price.cost) ? '30px' : 0,
                 fontWeight: /\d/.test(price.cost) ? 600 : 500,
-              }}
-            >
+              }}>
               {price.cost}
             </span>
           </p>

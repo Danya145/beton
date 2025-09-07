@@ -30,8 +30,7 @@ export const AlertPortal = ({ type, message }: AlertPortalProps) => {
         flexDirection: 'column',
       }}
       role="alert"
-      aria-live="assertive"
-    >
+      aria-live="assertive">
       <div style={{ marginBottom: 8, textAlign: 'center' }}>{message}</div>
     </div>,
     document.body,

@@ -15,8 +15,7 @@ export const CustomMap = ({ latitude, longitude, zoom = 14 }: MapProps) => {
         query={{
           lang: 'ru_RU',
           load: 'package.full',
-        }}
-      >
+        }}>
         <Map
           defaultState={{ center: coordinates, zoom }}
           width="100%"
@@ -30,9 +29,13 @@ export const CustomMap = ({ latitude, longitude, zoom = 14 }: MapProps) => {
           state={{
             center: coordinates,
             zoom,
-            controls: ['zoomControl', 'fullscreenControl', 'typeSelector', 'geolocationControl'],
-          }}
-        >
+            controls: [
+              'zoomControl',
+              'fullscreenControl',
+              'typeSelector',
+              'geolocationControl',
+            ],
+          }}>
           <Placemark geometry={coordinates} />
         </Map>
       </YMaps>

@@ -13,7 +13,7 @@ export const PasswordInput = ({ classname, ...rest }: InputProps) => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisibility = () => {
-    setVisible((prev) => !prev);
+    setVisible(prev => !prev);
   };
 
   return (
