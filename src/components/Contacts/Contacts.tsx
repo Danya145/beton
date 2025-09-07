@@ -1,5 +1,5 @@
 import emailjs from 'emailjs-com';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import InputMask from 'react-input-mask';
 
 import { useAlert } from '@/ui/Alert/useAlert';
