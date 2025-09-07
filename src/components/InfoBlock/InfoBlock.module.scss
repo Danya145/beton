@@ -11,6 +11,7 @@
     }
 
     .content {
+        position: relative;
         box-sizing: border-box;
         padding: 35px 42px;
         flex: 1;
@@ -29,7 +30,6 @@
         @media (max-width:950px) {
             gap: 10px;
             padding: 25px;
-            position: relative;
         }
 
         &.orange {
@@ -102,6 +102,8 @@
         }
 
         a {
+            position: absolute;
+            bottom: 35px;
             cursor: pointer;
             font-size: 20px;
             font-weight: 700;
@@ -113,7 +115,6 @@
             }
             @media (max-width:950px) {
                 font-size: 13px;
-                position: absolute;
                 bottom:25px;
             }
 

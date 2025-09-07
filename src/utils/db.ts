@@ -20,37 +20,37 @@ export const MainInfo: Record<string, Category> = {
     icon: ICONS.Sheben,
     marks: [
       {
-        name: 'M200',
+        name: 'M 200',
         official_name: '(c12/15)',
         price: '180',
       },
       {
-        name: 'M250',
+        name: 'M 250',
         official_name: '(c16/20)',
         price: '185',
       },
       {
-        name: 'M300',
+        name: 'M 300',
         official_name: '(c18/22.5)',
         price: '190',
       },
       {
-        name: 'M350',
+        name: 'M 350',
         official_name: '(c20/25)',
         price: '195',
       },
       {
-        name: 'M400',
+        name: 'M 400',
         official_name: '(c25/30)',
         price: '200',
       },
       {
-        name: 'M450',
+        name: 'M 450',
         official_name: '(c28/35)',
         price: '205',
       },
       {
-        name: 'M500',
+        name: 'M 500',
         official_name: '(c30/37)',
         price: '210',
       },
@@ -62,22 +62,22 @@ export const MainInfo: Record<string, Category> = {
     icon: ICONS.Gravij,
     marks: [
       {
-        name: 'M150',
+        name: 'M 150',
         official_name: '(с10/12.5)',
         price: '135',
       },
       {
-        name: 'M200',
+        name: 'M 200',
         official_name: '(с12/15)',
         price: '140',
       },
       {
-        name: 'M250',
+        name: 'M 250',
         official_name: '(c16/20)',
         price: '145',
       },
       {
-        name: 'M300',
+        name: 'M 300',
         official_name: '(c18/22.5)',
         price: '150',
       },
@@ -88,23 +88,23 @@ export const MainInfo: Record<string, Category> = {
     icon: ICONS.Liquid,
     marks: [
       {
-        name: 'M50',
+        name: 'M 50',
         price: '115',
       },
       {
-        name: 'M75',
+        name: 'M 75',
         price: '120',
       },
       {
-        name: 'M100',
+        name: 'M 100',
         price: '125',
       },
       {
-        name: 'M150',
+        name: 'M 150',
         price: '130',
       },
       {
-        name: 'M200',
+        name: 'M 200',
         price: '135',
       },
     ],

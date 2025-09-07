@@ -5,7 +5,8 @@
     height: 100%;
     border: 3px solid $blue-color;
     border-radius: 7px;
-    padding: 16px 40px;
+    padding: 16px 40px 22px;
+    box-sizing: border-box;
 
     h3 {
         font-size: 24px;
@@ -21,7 +22,7 @@
 
     .rents {
         margin-top: 30px;
-        @include d-flex(column, start, start, 30px);
+        @include d-flex(column, start, start, 25px);
     }
 }
 
@@ -31,6 +32,9 @@
     >div {
         @include d-flex(row, center, start);
 
+        >svg{
+            min-width: 40px;
+        }
         .info {
             margin-left: 25px;
 
