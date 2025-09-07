@@ -63,7 +63,11 @@ export const Products = () => {
         ))}
         {INFO_BLOCKS.slice(0, 1).map((item, index) => (
           <div key={`img-${index}`} className={styles.gridItem}>
-            <img src={item.image} alt={item.header.material} className={styles.image} />
+            <img
+              src={item.image}
+              alt={item.header.material}
+              className={styles.image}
+            />
           </div>
         ))}
         {INFO_BLOCKS.slice(1, 2).map((item, index) => (
@@ -73,13 +77,21 @@ export const Products = () => {
         ))}
         {INFO_BLOCKS.slice(1, 2).map((item, index) => (
           <div key={`img-${index}`} className={styles.gridItem}>
-            <img src={item.image} alt={item.header.material} className={styles.image} />
+            <img
+              src={item.image}
+              alt={item.header.material}
+              className={styles.image}
+            />
           </div>
         ))}
 
         {INFO_BLOCKS.slice(2, 3).map((item, index) => (
           <div key={`img2-${index}`} className={styles.gridItem}>
-            <img src={item.image} alt={item.header.material} className={styles.image} />
+            <img
+              src={item.image}
+              alt={item.header.material}
+              className={styles.image}
+            />
           </div>
         ))}
         {INFO_BLOCKS.slice(2, 3).map((item, index) => (
@@ -89,7 +101,11 @@ export const Products = () => {
         ))}
         {INFO_BLOCKS.slice(3, 4).map((item, index) => (
           <div key={`img2-${index}`} className={styles.gridItem}>
-            <img src={item.image} alt={item.header.material} className={styles.image} />
+            <img
+              src={item.image}
+              alt={item.header.material}
+              className={styles.image}
+            />
           </div>
         ))}
         {INFO_BLOCKS.slice(3, 4).map((item, index) => (

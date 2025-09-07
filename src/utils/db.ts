@@ -112,13 +112,16 @@ export const MainInfo: Record<string, Category> = {
   },
 };
 
-export const brandOptions: Record<string, { value: string; label: string; price: number }[]> = {
-  gravel: MainInfo.gravel.marks.map((mark) => ({
+export const brandOptions: Record<
+  string,
+  { value: string; label: string; price: number }[]
+> = {
+  gravel: MainInfo.gravel.marks.map(mark => ({
     value: mark.name,
     label: `${mark.name} (${MainInfo.gravel.material})`,
     price: +mark.price,
   })),
-  crushedStone: MainInfo.crushedStone.marks.map((mark) => ({
+  crushedStone: MainInfo.crushedStone.marks.map(mark => ({
     value: mark.name,
     label: `${mark.name} (${MainInfo.crushedStone.material})`,
     price: +mark.price,

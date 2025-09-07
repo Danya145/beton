@@ -2,7 +2,12 @@ import { IMAGES } from '@/ui/constants';
 
 import * as styles from './Partners.module.scss';
 
-const images = [IMAGES.Partners1, IMAGES.Partners2, IMAGES.Partners3, IMAGES.Partners4];
+const images = [
+  IMAGES.Partners1,
+  IMAGES.Partners2,
+  IMAGES.Partners3,
+  IMAGES.Partners4,
+];
 
 export const Partners = () => {
   return (

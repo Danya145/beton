@@ -17,7 +17,8 @@ export const Contacts = () => {
     const trimmed = name.trim();
     if (trimmed.length === 0) return 'Введите имя';
     if (trimmed.length < 2) return 'Имя должно быть не короче 2 символов';
-    if (!/^[A-Za-zА-Яа-яЁё-]+$/.test(trimmed)) return 'Имя может содержать только буквы и дефис';
+    if (!/^[A-Za-zА-Яа-яЁё-]+$/.test(trimmed))
+      return 'Имя может содержать только буквы и дефис';
     return null;
   };
 
@@ -85,7 +86,7 @@ export const Contacts = () => {
         setNameError(null);
         setPhoneError(null);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error('EmailJS Error:', error);
         showAlert({
           type: 'error',
@@ -104,15 +105,18 @@ export const Contacts = () => {
           placeholder="Ваше имя"
           type="text"
           value={name}
-          onChange={(e) => handleNameChange(e.target.value)}
+          onChange={e => handleNameChange(e.target.value)}
         />
         {nameError && <p className={styles.errorMsg}>{nameError}</p>}
         <InputMask
           mask="+375(99)999-99-99"
           value={rawPhone}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePhoneChange(e.target.value)}
-        >
-          {(inputProps) => <input {...inputProps} type="text" placeholder="Ваш номер" />}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handlePhoneChange(e.target.value)
+          }>
+          {inputProps => (
+            <input {...inputProps} type="text" placeholder="Ваш номер" />
+          )}
         </InputMask>
         {phoneError && <p className={styles.errorMsg}>{phoneError}</p>}
         <button type="submit" disabled={!isFormValid}>

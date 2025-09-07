@@ -11,7 +11,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({ text, icon, onClick, ...rest }: ButtonProps) => {
   return (
     <button onClick={onClick || null} {...rest}>
-      {text ? text : icon ? <img src={icon} alt="icon" className={styles.icon} /> : null}
+      {text ? (
+        text
+      ) : icon ? (
+        <img src={icon} alt="icon" className={styles.icon} />
+      ) : null}
     </button>
   );
 };
