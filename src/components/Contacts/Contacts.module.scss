@@ -55,6 +55,14 @@
             padding: 27px 72px;
             display: flex;
             align-items: center;
+            border-radius: 0;
+            &:hover:not(:disabled){
+                background: rgba($color: $blue-color, $alpha: 0.8);
+                cursor: pointer;
+            }
+            &:disabled{
+                cursor: not-allowed;
+            }
         }
 
         .errorMsg {

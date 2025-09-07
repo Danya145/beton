@@ -11,7 +11,7 @@ export const Categories = () => {
       <div className={styles.categories}>
         {Object.entries(MainInfo).map(([key, category]) => (
           <CategoryBlock key={key} header={category.title}>
-            {category.marks.map((mark) => (
+            {category.marks.map(mark => (
               <MarkInfo
                 key={mark.name}
                 brand={`${mark.name[0]} ${mark.name.slice(1)}`}

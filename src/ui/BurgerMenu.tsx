@@ -29,7 +29,7 @@ export const BurgerMenu = () => {
 
   return (
     <div className={styles.burgerMenu} ref={menuRef}>
-      <button onClick={() => setOpen((prev) => !prev)} aria-label="Toggle menu">
+      <button onClick={() => setOpen(prev => !prev)} aria-label="Toggle menu">
         <ICONS.BurgerMenu />
       </button>
       {open && (
