@@ -50,11 +50,17 @@
             @media (max-width:1450px) {
                 font-size: 16px;
             }
+            @media (max-width:500px) {
+                font-size: 13px;
+            }
         }
         p {
             span {
                 color: $orange-color;
                 font-weight: 700;
+            }
+            @media (max-width:500px) {
+                font-size: 11px;
             }
         }
     }
@@ -88,6 +94,9 @@
 
             @media (max-width:1250px) {
                 font-size: 17px;
+            }
+            @media (max-width:500px) {
+                font-size: 14px;
             }
         }
 

@@ -3,12 +3,12 @@
 .container {
     position: relative;
     width: 100%;
+    overflow: hidden;
 
     img {
         width: 100%;
         @media(max-width:500px){
             width: 150%;
-            overflow: hidden;
         }
     }
 

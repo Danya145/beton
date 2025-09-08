@@ -1,6 +1,10 @@
 import { ICONS } from '@/ui/constants';
 
-export const COST_PER_KM = 10;
+export const COST_PER_KM = {
+  1: 4,
+  50: 5,
+  100: 6,
+};
 
 interface Mark {
   name: string;

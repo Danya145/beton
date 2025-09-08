@@ -15,6 +15,17 @@ import { brandOptions, COST_PER_KM } from '@/utils/db';
 
 import * as styles from './Calculator.module.scss';
 
+function getCostPerKm(distance: number): number {
+  switch (true) {
+    case distance <= 50:
+      return COST_PER_KM[1];
+    case distance <= 100:
+      return COST_PER_KM[50];
+    default:
+      return COST_PER_KM[100];
+  }
+}
+
 export const Calculator = () => {
   const [type, setType] = useState('');
   const [brand, setBrand] = useState('');
@@ -32,9 +43,10 @@ export const Calculator = () => {
       return;
     }
 
+    const distanceCost = getCostPerKm(distanceValue);
     const pricePerCube =
       brandOptions[type].find(b => b.value === brand)?.price ?? 0;
-    const total = pricePerCube * volumeValue + distanceValue * COST_PER_KM;
+    const total = pricePerCube * volumeValue + distanceCost;
     setCountRes(total);
   };
 
