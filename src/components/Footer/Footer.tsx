@@ -45,8 +45,7 @@ export const Footer = () => {
       <div className={styles.info}>
         <div className={styles.contacts}>
           <h3>Контакты</h3>
-          {renderPhoneLink('+375297501368', '+375 (29) 750 13 68')}
-          {renderPhoneLink('+375445366366', '+375 (44) 536 63 66')}
+          {renderPhoneLink('+375296034046', '+375 (29) 603 40 46')}
           <a href="mailto:info@kupitbeton.by">info@kupitbeton.by</a>
         </div>
         <div className={styles.adressess}>

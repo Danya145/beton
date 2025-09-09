@@ -34,8 +34,7 @@ export const Phone = () => {
     <div className={styles.container} id="phone">
       <ICONS.Phone />
       <div className={styles.phones}>
-        {renderPhoneLink('+375297501368', '+375 (29) 750 13 68')}
-        {renderPhoneLink('+375445366366', '+375 (44) 536 63 66')}
+        {renderPhoneLink('+375296034046', '+375 (29) 603 40 46')}
       </div>
     </div>
   );

@@ -62,14 +62,14 @@ export const Calculator = () => {
     const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
 
     if (isMobile) {
-      window.location.href = `tel:+375 (29) 750 13 68`;
+      window.location.href = `tel:+375 (29) 603 40 46`;
     } else {
       navigator.clipboard
-        .writeText('+375(29)7501368')
+        .writeText('+375296034046')
         .then(() => {
           showAlert({
             type: 'success',
-            message: `Номер +375 (29) 750 13 68 скопирован в буфер обмена`,
+            message: `Номер +375 (29) 603 40 46 скопирован в буфер обмена`,
           });
         })
         .catch(() => {
