@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { PROJECTS } from '@/ui/constants';
 
@@ -6,6 +6,19 @@ import * as styles from './Projects.module.scss';
 
 export const Projects = () => {
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 500);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const prevSlide = () => {
     setCurrent(prev => (prev === 0 ? PROJECTS.length - 1 : prev - 1));
@@ -27,7 +40,10 @@ export const Projects = () => {
           {[...Array(2)].flatMap((_, i) =>
             PROJECTS.map((project, id) => (
               <div key={`${i}-${id}`} className={styles.slide}>
-                <img src={project.image} alt={`Project ${id + 1}`} />
+                <img
+                  src={isMobile ? project.small_img : project.image}
+                  alt={`Project ${id + 1}`}
+                />
               </div>
             )),
           )}
