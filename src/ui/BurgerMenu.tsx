@@ -32,11 +32,12 @@ export const BurgerMenu = () => {
       <button onClick={() => setOpen(prev => !prev)} aria-label="Toggle menu">
         <ICONS.BurgerMenu />
       </button>
-      {open && (
-        <div className={styles.menu} onClick={() => setOpen(false)}>
-          <Nav />
-        </div>
-      )}
+
+      <div
+        className={`${styles.menu} ${open ? styles.open : ''}`}
+        onClick={() => setOpen(false)}>
+        <Nav />
+      </div>
     </div>
   );
 };

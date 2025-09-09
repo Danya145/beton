@@ -56,13 +56,16 @@ export const Footer = () => {
         <div className={styles.socials}>
           <h3>Соц. сети</h3>
           <div>
-            <a href="">
+            <a
+              href="https://www.tiktok.com/@makbeton"
+              target="_blank"
+              rel="noreferrer">
               <ICONS.TikTok />
             </a>
-            <a href="">
+            <a href="" target="_blank">
               <ICONS.Insta />
             </a>
-            <a href="">
+            <a href="" target="_blank">
               <ICONS.Facebook />
             </a>
           </div>
