@@ -18,11 +18,11 @@ import * as styles from './Calculator.module.scss';
 function getCostPerKm(distance: number): number {
   switch (true) {
     case distance <= 50:
-      return COST_PER_KM[1];
+      return COST_PER_KM[1] * distance;
     case distance <= 100:
-      return COST_PER_KM[50];
+      return COST_PER_KM[50] * distance;
     default:
-      return COST_PER_KM[100];
+      return COST_PER_KM[100] * distance;
   }
 }
 
