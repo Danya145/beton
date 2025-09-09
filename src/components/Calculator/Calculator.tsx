@@ -32,6 +32,7 @@ export const Calculator = () => {
   const [volume, setVolume] = useState('');
   const [distance, setDistance] = useState('');
   const [countRes, setCountRes] = useState(0);
+  const [isChanged, setIsChanged] = useState(false);
 
   const { showAlert } = useAlert();
 
@@ -48,6 +49,7 @@ export const Calculator = () => {
       brandOptions[type].find(b => b.value === brand)?.price ?? 0;
     const total = pricePerCube * volumeValue + distanceCost;
     setCountRes(total);
+    setIsChanged(false);
   };
 
   const handleNumberInput = (
@@ -56,20 +58,21 @@ export const Calculator = () => {
   ) => {
     if (/^[0-9]*[,]?[0-9]*$/.test(val)) {
       setter(val);
+      setIsChanged(true);
     }
   };
   const handleClick = useCallback(() => {
     const isMobile = /Mobi|Android|iPhone/i.test(navigator.userAgent);
 
     if (isMobile) {
-      window.location.href = `tel:+375 (29) 750 13 68`;
+      window.location.href = `tel:+375 (29) 603 40 46`;
     } else {
       navigator.clipboard
-        .writeText('+375(29)7501368')
+        .writeText('+375296034046')
         .then(() => {
           showAlert({
             type: 'success',
-            message: `Номер +375 (29) 750 13 68 скопирован в буфер обмена`,
+            message: `Номер +375 (29) 603 40 46 скопирован в буфер обмена`,
           });
         })
         .catch(() => {
@@ -110,6 +113,7 @@ export const Calculator = () => {
                 onChange={(e: SelectChangeEvent<string>) => {
                   setType(e.target.value);
                   setBrand('');
+                  setIsChanged(true);
                 }}>
                 <MenuItem value="gravel">На гравии</MenuItem>
                 <MenuItem value="crushedStone">На щебне</MenuItem>
@@ -126,9 +130,10 @@ export const Calculator = () => {
               <Select
                 value={brand}
                 label="Марка бетона"
-                onChange={(e: SelectChangeEvent<string>) =>
-                  setBrand(e.target.value)
-                }>
+                onChange={(e: SelectChangeEvent<string>) => {
+                  setBrand(e.target.value);
+                  setIsChanged(true);
+                }}>
                 {type &&
                   brandOptions[type].map(b => (
                     <MenuItem key={b.value} value={b.value}>
@@ -171,7 +176,7 @@ export const Calculator = () => {
                 mt: '25px',
                 gridArea: isMobile ? 'btn' : 'none',
               }}
-              disabled={!distance || !volume || !brand || !type}>
+              disabled={!distance || !volume || !brand || !type || !isChanged}>
               Рассчитать
             </Button>
             <p className={styles.result}>Итого: {countRes} byn</p>

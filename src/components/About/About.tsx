@@ -10,7 +10,7 @@ export const About = () => {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isMobile) {
-      window.location.href = 'tel:+375297501368';
+      window.location.href = 'tel:+375296034046';
     } else {
       window.dispatchEvent(new CustomEvent('forceShowHeader'));
 
