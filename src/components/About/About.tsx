@@ -1,8 +1,11 @@
+import { useEffect, useState } from 'react';
+
 import { IMAGES } from '@/ui/constants';
 
 import * as styles from './About.module.scss';
 
 export const About = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1100);
   const handleCallClick = () => {
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
@@ -38,13 +41,28 @@ export const About = () => {
       });
     }
   };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1100);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <section className={styles.container} id="about">
       <div className={styles.images}>
         <img src={IMAGES.About1} alt="" />
         <img src={IMAGES.About2} alt="" />
-        <img src={IMAGES.About3} alt="" />
+        <img
+          src={IMAGES.About3}
+          alt=""
+          style={{ display: isMobile ? 'none' : 'block' }}
+        />
         <img src={IMAGES.About4} alt="" />
       </div>
       <div className={styles.info}>

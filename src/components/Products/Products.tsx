@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { IMAGES } from '@/ui/constants';
 
 import { InfoBlock, InfoBlockProps } from '../InfoBlock/InfoBlock';
@@ -53,6 +55,18 @@ const INFO_BLOCKS: InfoBlockProps[] = [
 ];
 
 export const Products = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 750);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 750);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <section className={styles.container} id={'products'}>
       <div className={styles.grid}>
@@ -61,53 +75,57 @@ export const Products = () => {
             <InfoBlock {...item} />
           </div>
         ))}
-        {INFO_BLOCKS.slice(0, 1).map((item, index) => (
-          <div key={`img-${index}`} className={styles.gridItem}>
-            <img
-              src={item.image}
-              alt={item.header.material}
-              className={styles.image}
-            />
-          </div>
-        ))}
+        {!isMobile &&
+          INFO_BLOCKS.slice(0, 1).map((item, index) => (
+            <div key={`img-${index}`} className={styles.gridItem}>
+              <img
+                src={item.image}
+                alt={item.header.material}
+                className={styles.image}
+              />
+            </div>
+          ))}
         {INFO_BLOCKS.slice(1, 2).map((item, index) => (
           <div key={`block-${index}`} className={styles.gridItem}>
             <InfoBlock {...item} />
           </div>
         ))}
-        {INFO_BLOCKS.slice(1, 2).map((item, index) => (
-          <div key={`img-${index}`} className={styles.gridItem}>
-            <img
-              src={item.image}
-              alt={item.header.material}
-              className={styles.image}
-            />
-          </div>
-        ))}
+        {!isMobile &&
+          INFO_BLOCKS.slice(1, 2).map((item, index) => (
+            <div key={`img-${index}`} className={styles.gridItem}>
+              <img
+                src={item.image}
+                alt={item.header.material}
+                className={styles.image}
+              />
+            </div>
+          ))}
 
-        {INFO_BLOCKS.slice(2, 3).map((item, index) => (
-          <div key={`img2-${index}`} className={styles.gridItem}>
-            <img
-              src={item.image}
-              alt={item.header.material}
-              className={styles.image}
-            />
-          </div>
-        ))}
+        {!isMobile &&
+          INFO_BLOCKS.slice(2, 3).map((item, index) => (
+            <div key={`img2-${index}`} className={styles.gridItem}>
+              <img
+                src={item.image}
+                alt={item.header.material}
+                className={styles.image}
+              />
+            </div>
+          ))}
         {INFO_BLOCKS.slice(2, 3).map((item, index) => (
           <div key={`block2-${index}`} className={styles.gridItem}>
             <InfoBlock {...item} />
           </div>
         ))}
-        {INFO_BLOCKS.slice(3, 4).map((item, index) => (
-          <div key={`img2-${index}`} className={styles.gridItem}>
-            <img
-              src={item.image}
-              alt={item.header.material}
-              className={styles.image}
-            />
-          </div>
-        ))}
+        {!isMobile &&
+          INFO_BLOCKS.slice(3, 4).map((item, index) => (
+            <div key={`img2-${index}`} className={styles.gridItem}>
+              <img
+                src={item.image}
+                alt={item.header.material}
+                className={styles.image}
+              />
+            </div>
+          ))}
         {INFO_BLOCKS.slice(3, 4).map((item, index) => (
           <div key={`block2-${index}`} className={styles.gridItem}>
             <InfoBlock {...item} />

@@ -8,6 +8,12 @@
         font-weight: 600;
         color: $gray-color;
         text-transform: uppercase;
+        @media (max-width: 950px) {
+            text-transform: none;
+            align-items: start;
+            padding: 15px 10px;
+            gap: 10px;
+        }
 
         li {
             position: relative;
@@ -17,6 +23,10 @@
             gap: 3px;
             justify-content: space-between;
             align-items: center;
+        }
+
+        @media (max-width:950px){
+            flex-direction: column;
         }
     }
 }

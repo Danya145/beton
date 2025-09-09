@@ -35,6 +35,9 @@ export const InfoBlock = ({
           ))}
         </ul>
         <a
+          style={{
+            alignSelf: reverse ? 'end' : 'auto',
+          }}
           onClick={() => {
             navigate(link);
             window.scrollTo({ top: 0, behavior: 'smooth' });

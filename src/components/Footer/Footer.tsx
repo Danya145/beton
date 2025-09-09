@@ -1,8 +1,34 @@
+import { useEffect, useState } from 'react';
+
+import { useAlert } from '@/ui/Alert/useAlert';
 import { ICONS, IMAGES } from '@/ui/constants';
 
 import * as styles from './Footer.module.scss';
 
 export const Footer = () => {
+  const { showAlert } = useAlert();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor;
+    setIsMobile(/android|iphone|ipad|ipod/i.test(userAgent));
+  }, []);
+
+  const handleCopy = (phone: string) => {
+    navigator.clipboard.writeText(phone).then(() => {
+      showAlert({ type: 'success', message: `Номер ${phone} скопирован` });
+    });
+  };
+
+  const renderPhoneLink = (phone: string, display: string) => {
+    return isMobile ? (
+      <a href={`tel:${phone}`}>{display}</a>
+    ) : (
+      <span onClick={() => handleCopy(phone)} className={styles.clickable}>
+        {display}
+      </span>
+    );
+  };
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
@@ -19,8 +45,8 @@ export const Footer = () => {
       <div className={styles.info}>
         <div className={styles.contacts}>
           <h3>Контакты</h3>
-          <a href="tel:+375297501368">+375 (29) 750 13 68</a>
-          <a href="tel:+375445366366">+375 (44) 536 63 66</a>
+          {renderPhoneLink('+375297501368', '+375 (29) 750 13 68')}
+          {renderPhoneLink('+375445366366', '+375 (44) 536 63 66')}
           <a href="mailto:info@kupitbeton.by">info@kupitbeton.by</a>
         </div>
         <div className={styles.adressess}>

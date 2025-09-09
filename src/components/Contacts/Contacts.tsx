@@ -11,6 +11,7 @@ export const Contacts = () => {
   const [rawPhone, setRawPhone] = useState('');
   const [nameError, setNameError] = useState<string | null>(null);
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const { showAlert } = useAlert();
 
   const validateName = (name: string): string | null => {
@@ -71,7 +72,7 @@ export const Contacts = () => {
       email: 'noreply@example.com',
       title: 'Заявка на бетон',
     };
-
+    setIsLoading(true);
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID!,
@@ -92,7 +93,8 @@ export const Contacts = () => {
           type: 'error',
           message: 'Ошибка: не удалось отправить сообщение. Попробуйте позже.',
         });
-      });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   const isFormValid = !nameError && !phoneError && name && rawPhone;
@@ -102,13 +104,19 @@ export const Contacts = () => {
       <h1>Нужна консультация? Оставьте контакты – и мы с вами свяжемся!</h1>
       <form onSubmit={handleSubmit}>
         <input
+          name="your-name"
           placeholder="Ваше имя"
           type="text"
           value={name}
           onChange={e => handleNameChange(e.target.value)}
         />
-        {nameError && <p className={styles.errorMsg}>{nameError}</p>}
+        {nameError && (
+          <p className={`${styles.errorMsg} ${styles.nameError}`}>
+            {nameError}
+          </p>
+        )}
         <InputMask
+          name="your-phone"
           mask="+375(99)999-99-99"
           value={rawPhone}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -118,8 +126,12 @@ export const Contacts = () => {
             <input {...inputProps} type="text" placeholder="Ваш номер" />
           )}
         </InputMask>
-        {phoneError && <p className={styles.errorMsg}>{phoneError}</p>}
-        <button type="submit" disabled={!isFormValid}>
+        {phoneError && (
+          <p className={`${styles.errorMsg} ${styles.phoneError}`}>
+            {phoneError}
+          </p>
+        )}
+        <button type="submit" disabled={!isFormValid || isLoading}>
           заказать звонок
         </button>
       </form>

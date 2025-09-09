@@ -7,13 +7,24 @@ import {
   SelectChangeEvent,
   TextField,
 } from '@mui/material';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useAlert } from '@/ui/Alert/useAlert';
 import { ICONS } from '@/ui/constants';
 import { brandOptions, COST_PER_KM } from '@/utils/db';
 
 import * as styles from './Calculator.module.scss';
+
+function getCostPerKm(distance: number): number {
+  switch (true) {
+    case distance <= 50:
+      return COST_PER_KM[1] * distance;
+    case distance <= 100:
+      return COST_PER_KM[50] * distance;
+    default:
+      return COST_PER_KM[100] * distance;
+  }
+}
 
 export const Calculator = () => {
   const [type, setType] = useState('');
@@ -32,9 +43,10 @@ export const Calculator = () => {
       return;
     }
 
+    const distanceCost = getCostPerKm(distanceValue);
     const pricePerCube =
       brandOptions[type].find(b => b.value === brand)?.price ?? 0;
-    const total = pricePerCube * volumeValue + distanceValue * COST_PER_KM;
+    const total = pricePerCube * volumeValue + distanceCost;
     setCountRes(total);
   };
 
@@ -66,6 +78,19 @@ export const Calculator = () => {
     }
   }, []);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 900);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section className={styles.container} id="calculator">
       <div className={styles.calculator_wrapper}>
@@ -74,7 +99,8 @@ export const Calculator = () => {
           <div className={styles.countForm}>
             <FormControl
               sx={{
-                width: '40%',
+                width: isMobile ? '100%' : '40%',
+                gridArea: isMobile ? 'type' : 'none',
               }}
               size="small">
               <InputLabel>Тип бетона</InputLabel>
@@ -91,7 +117,8 @@ export const Calculator = () => {
             </FormControl>
             <FormControl
               sx={{
-                width: '40%',
+                width: isMobile ? '100%' : '40%',
+                gridArea: isMobile ? 'mark' : 'none',
               }}
               disabled={!type}
               size="small">
@@ -117,7 +144,8 @@ export const Calculator = () => {
                 handleNumberInput(e.target.value, setVolume)
               }
               sx={{
-                width: '40%',
+                width: isMobile ? '100%' : '40%',
+                gridArea: isMobile ? 'volume' : 'none',
               }}
               size="small"
             />
@@ -128,7 +156,8 @@ export const Calculator = () => {
                 handleNumberInput(e.target.value, setDistance)
               }
               sx={{
-                width: '40%',
+                width: isMobile ? '100%' : '40%',
+                gridArea: isMobile ? 'dist' : 'none',
               }}
               size="small"
             />
@@ -136,10 +165,11 @@ export const Calculator = () => {
               variant="contained"
               onClick={handleCalculate}
               sx={{
-                width: '40%',
+                width: isMobile ? '100%' : '40%',
                 height: '50px',
                 backgroundColor: 'rgb(42, 95, 158)',
                 mt: '25px',
+                gridArea: isMobile ? 'btn' : 'none',
               }}
               disabled={!distance || !volume || !brand || !type}>
               Рассчитать
@@ -150,8 +180,8 @@ export const Calculator = () => {
         <div className={styles.extraInfo}>
           <ICONS.Info />
           <p>
-            Точные цены и подробную информацию уточнять по{' '}
-            <span onClick={handleClick}>телефону</span>
+            Точные цены и подробную информацию уточнять по
+            <span onClick={handleClick}> телефону</span>
           </p>
         </div>
       </div>

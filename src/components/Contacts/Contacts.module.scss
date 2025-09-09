@@ -13,23 +13,45 @@
     @media (max-width:1600px) {
         gap: 35px;
     }
+    @media (max-width:850px) {
+        padding: 40px 200px;
+        gap: 20px;
+    }
+    @media (max-width:750px) {
+        padding: 40px 150px;
+    }
+    @media (max-width:650px) {
+        padding: 40px 100px;
+    }
+    @media (max-width:550px) {
+        padding: 40px 50px;
+    }
+    @media (max-width:400px) {
+        padding: 40px 15px;
+    }
 
     h1 {
         max-width: 750px;
         font-weight: 600;
         font-size: 40px;
         text-align: center;
+        @media (max-width:850px) {
+            text-align: left;
+            font-weight: 400;
+            font-size: 24px;
+        }
     }
 
     form {
-        display: flex;
-        flex-direction: row;
-        gap: 25px;
-        align-items: center;
+        @include d-flex(row,center,center,25px);
         height: 70px;
-        justify-content: center;
         font-size: 18px;
         position: relative;
+        @media (max-width:850px) {
+            flex-direction: column;
+            height: 230px;
+            width: 100%;
+        }
 
         input {
             box-sizing: border-box;
@@ -43,6 +65,15 @@
 
             &::placeholder {
                 color: $white-color;
+            }
+            @media (max-width:850px) {
+                border-width: 0;
+                border-bottom-width: 1px;
+                background: $orange-color;
+                width: 100%;
+                padding: 15px 20px;
+                font-size: 16px;
+                font-weight: 300;
             }
         }
 
@@ -62,6 +93,16 @@
             }
             &:disabled{
                 cursor: not-allowed;
+                background: rgba($color: $blue-color, $alpha: 0.6);
+            }
+            @media (max-width:850px) {
+                margin-top: 20px;
+                height: 50px;
+                width: 70%;
+                padding: 16px 51px;
+                justify-content: center;
+                min-width: 230px;
+                font-size: 13px;
             }
         }
 
@@ -69,6 +110,23 @@
             color: red;
             position: absolute;
             top: 100%;
+            max-width: 30%;
+            &.nameError{
+                left: 0;
+            }
+            &.phoneError{
+                left: 33%;
+            }
+            @media (max-width:850px) {
+                max-width: 100%;
+                &.nameError{
+                    top: 25%;
+                }
+                &.phoneError{
+                    top: 61%;
+                    left: 0;
+                }
+            }
         }
     }
 }

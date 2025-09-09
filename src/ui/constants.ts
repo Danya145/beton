@@ -9,6 +9,7 @@ import Certificate31 from '@/assets/certificate31.jpg';
 import Certificate32 from '@/assets/certificate32.jpg';
 import AutoPump from '@/assets/icons/auto-pump.svg';
 import BottomArrow from '@/assets/icons/bottom_arrow.svg';
+import BurgerMenu from '@/assets/icons/burger-menu.svg';
 import CertificateIcon from '@/assets/icons/certificate.svg';
 import Facebook from '@/assets/icons/Facebook.svg';
 import Gravij from '@/assets/icons/gravii.svg';
@@ -85,6 +86,7 @@ export const ICONS = {
   AutoPump,
   StaticPump,
   Info,
+  BurgerMenu,
 };
 export type IconProps = typeof ICONS;
 

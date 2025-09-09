@@ -12,7 +12,7 @@ export const RentInfo = ({ Icon, name, extraInfo, prices }: RentInfoProps) => {
   return (
     <div className={styles.rentInfo}>
       <div>
-        <Icon width={40} height={30} />
+        <Icon width={'40px'} height={'30px'} />
         <div className={styles.info}>
           <p>{name}</p>
           <span>{extraInfo}</span>
