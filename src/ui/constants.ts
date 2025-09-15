@@ -36,10 +36,15 @@ import Products2 from '@/assets/products2.png';
 import Products3 from '@/assets/products3.png';
 import Products4 from '@/assets/products4.png';
 import Project1 from '@/assets/project1.png';
+import Project1_small from '@/assets/project1_small.png';
 import Project2 from '@/assets/project2.png';
+import Project2_small from '@/assets/project2_small.png';
 import Project3 from '@/assets/project3.png';
+import Project3_small from '@/assets/project3_small.png';
 import Project4 from '@/assets/project4.png';
+import Project4_small from '@/assets/project4_small.png';
 import Project5 from '@/assets/project5.png';
+import Project5_small from '@/assets/project5_small.png';
 
 export const IMAGES = {
   Logo,
@@ -91,9 +96,9 @@ export const ICONS = {
 export type IconProps = typeof ICONS;
 
 export const PROJECTS = [
-  { image: Project1 },
-  { image: Project2 },
-  { image: Project3 },
-  { image: Project4 },
-  { image: Project5 },
+  { image: Project1, small_img: Project1_small },
+  { image: Project2, small_img: Project2_small },
+  { image: Project3, small_img: Project3_small },
+  { image: Project4, small_img: Project4_small },
+  { image: Project5, small_img: Project5_small },
 ];

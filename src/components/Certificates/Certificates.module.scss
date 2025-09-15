@@ -1,27 +1,74 @@
 @use '../../variables.scss' as *;
 
 .container {
-    background: $blue-color;
-    height: 650px;
+  background: $blue-color;
+  height: 650px;
+  @include d-flex(column, center, start);
+  @media (max-width: 500px) {
+    height: 550px;
+  }
 
-    @include d-flex(column, center, start);
+  h1 {
+    color: $white-color;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 45px 0 20px;
+    @media (max-width: 500px) {
+        font-size: 25px;
+    }
+  }
 
-    h1 {
-        color: $white-color;
-        font-size: 32px;
-        font-weight: 600;
-        margin: 45px 0 20px;
+  .divider {
+    width: 20%;
+    max-width: 200px;
+    height: 4px;
+    margin-bottom: 70px;
+    background-color: $orange-color;
+    @media (max-width: 500px) {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    @media (max-width: 400px) {
+        max-width: 150px;
+    }
+  }
+
+  .certificates {
+    @include d-flex(row, start, center, 50px);
+  }
+
+  .swiper {
+    @include d-flex(row, center, center, 20px);
+    width: 90%;
+    overflow: hidden;
+
+    .slidesWrapper {
+      flex: 1;
+      overflow: hidden;
     }
 
-    .divider {
-        width: 20%;
-        max-width: 200px;
-        height: 4px;
-        margin-bottom: 70px;
-        background-color: $orange-color
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
     }
 
-    .certificates {
-        @include d-flex(row, start, center, 50px);
+    .slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
     }
+
+    .arrow {
+      background: transparent;
+      border: none;
+      font-size: 36px;
+      color: $white-color;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+  }
 }
