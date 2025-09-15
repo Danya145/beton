@@ -5,7 +5,11 @@
   @include d-flex(column, center, center);
   @media (max-width: 1050px) {
     margin: 0 30px;
-}
+  }
+  @media (max-width: 500px) {
+    margin: 0 10px;
+    height: 450px;
+  }
 
   .calculator_wrapper {
     @include d-flex(column, start, start);
@@ -16,6 +20,13 @@
       padding: 50px 120px;
       max-width: 1000px;
       box-sizing: border-box;
+      @media (max-width: 800px) {
+        padding: 25px;
+      }
+      @media (max-width: 500px) {
+        padding: 25px 10px;
+        width: 100%;
+      }
 
       h1 {
         font-size: 40px;
@@ -26,7 +37,10 @@
         text-align: center;
         @media (max-width: 900px) {
           margin-bottom: 20px;
-      }
+        }
+        @media (max-width: 500px) {
+          font-size: 24px;
+        }
       }
 
       .countForm {
@@ -43,8 +57,20 @@
           'btn res';
           justify-content: center;
           gap: 20px;
-          min-width: 100%;
-      }
+          min-width: 360px;
+        }
+        @media (max-width: 800px) {
+          min-width: 100px;
+        }
+        @media (max-width: 500px) {
+          min-width: 250px;
+          gap: 10px 5px;
+          button {
+            font-size: 14px;
+            height: 30px;
+            margin-top: 10px;
+          }
+        }
 
         .result {
           width: 40%;
@@ -54,7 +80,18 @@
           align-self: end;
           @media (max-width: 900px) {
             width: 100%;
-        }
+          }
+          @media (max-width: 800px) {
+            font-size: 25px;
+            margin-bottom: 10px;
+          }
+          @media (max-width: 500px) {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+          @media (max-width: 400px) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -62,8 +99,14 @@
     .extraInfo {
       margin-top: 10px;
       @include d-flex(row, center, start, 5px);
+      @media (max-width: 800px) {
+        margin-top: 5px;
+      }
 
       p {
+        @media (max-width: 800px) {
+          font-size: 14px;
+        }
         >span {
           cursor: pointer;
           color: $blue-color;

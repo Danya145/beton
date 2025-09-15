@@ -8,6 +8,10 @@
     padding: 16px 40px 22px;
     box-sizing: border-box;
     min-width: 360px;
+    @media (max-width: 500px) {
+        min-width: 250px;
+        padding: 20px;
+    }
 
     h3 {
         font-size: 24px;
@@ -38,6 +42,9 @@
         }
         .info {
             margin-left: 25px;
+            @media (max-width: 500px) {
+                margin-left: 15px;
+            }
 
             p {
                 font-size: 20px;

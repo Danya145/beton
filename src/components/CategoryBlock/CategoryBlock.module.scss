@@ -2,12 +2,16 @@
 
 .container {
     max-width: 500px;
-    min-width: 250px;
-    height: 415px;
+    min-width: 300px;
+    box-sizing: border-box;
+    height: 450px;
     border: 3px solid $orange-color;
     border-radius: 7px;
     padding: 16px;
     @include d-flex(column, start, start);
+    @media (max-width: 1100px) {
+        height: 415px;
+    }
 }
 
 h3 {
@@ -25,6 +29,9 @@ h3 {
 .content {
     @include d-flex(column, start, start, 21px);
     width: 100%;
+    @media (max-width: 1100px) {
+        gap: 15px;
+    }
 }
 
 .markInfo {
@@ -33,6 +40,9 @@ h3 {
     align-items: center;
     gap: 25px;
     width: 100%;
+    @media (max-width: 1100px) {
+        gap: 15px;
+    }
 
     >div {
         @include d-flex(row, center, space-between);
@@ -42,6 +52,9 @@ h3 {
             @include d-flex(row, center, start, 2px);
             font-size: 20px;
             font-weight: 600;
+            @media (max-width: 1100px) {
+                font-size: px;
+            }
 
             .subName {
                 color: $gray-color;
