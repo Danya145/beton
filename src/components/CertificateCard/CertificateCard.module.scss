@@ -4,10 +4,14 @@
     border-radius: 7px;
     max-width:380px;
     @include d-flex(column,center,start,21px);
+    @media (max-width: 500px) {
+        gap: 10px;
+    }
     
     .icon{
         cursor: zoom-in;
         border: 5px solid $orange-color;
+        border-radius: 7px;
         box-sizing: border-box;
         padding: 41px 0 41px 25px;
         height: 320px;
