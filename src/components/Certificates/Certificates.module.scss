@@ -5,7 +5,8 @@
   height: 650px;
   @include d-flex(column, center, start);
   @media (max-width: 500px) {
-    height: 550px;
+    height: auto;
+    padding-bottom: 40px;
   }
 
   h1 {
@@ -15,6 +16,7 @@
     margin: 45px 0 20px;
     @media (max-width: 500px) {
         font-size: 25px;
+        margin: 40px 0 10px;
     }
   }
 
@@ -64,6 +66,8 @@
       font-size: 36px;
       color: $white-color;
       cursor: pointer;
+      position: relative;
+      top: -20px;
 
       &:disabled {
         opacity: 0.3;

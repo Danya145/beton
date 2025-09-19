@@ -107,7 +107,8 @@
         }
 
         .errorMsg {
-            color: red;
+            color: $blue-color;
+            font-size: 15px;
             position: absolute;
             top: 100%;
             max-width: 30%;

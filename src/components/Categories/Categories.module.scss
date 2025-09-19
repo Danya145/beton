@@ -11,7 +11,8 @@
             margin: 25px 0;
         }
         @media (max-width: 500px) {
-            margin: 25px 15px;
+            margin: 40px 15px;
+            font-size: 24px;
         }
     }
 
@@ -19,7 +20,7 @@
         @include d-flex(row, center, center, 65px);
         margin: 0 95px;
         @media (max-width: 1250px) {
-            gap: 30px;
+            gap: 40px;
             margin: 0 65px;
         }
         @media (max-width: 1050px) {
