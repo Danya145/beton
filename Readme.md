@@ -1,5 +1,5 @@
-# Stack overflow analogue
+# Beton landing
 
-# [Deploy](https://stack-overflow-analogue.netlify.app/)
+# [Netlify deploy](https://betoncentr.netlify.app/)
 
-# [Task](https://drive.google.com/file/d/1ZsAyDKE-n00akVzM7wut2GbFHtVPCiMu/view)
+# [Design](https://www.figma.com/design/SY0za8KktXV28YmwNKHdE3/CenterBeton?node-id=0-1&t=cIjPl9S7KwFapqxq-1)
