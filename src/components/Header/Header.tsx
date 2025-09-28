@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { Logo } from '@/components/Logo/Logo';
 import { Phone } from '@/components/Phone/Phone';
 import { BurgerMenu } from '@/ui/BurgerMenu';
+import { ICONS } from '@/ui/constants';
+import { CURRENT_PHONE } from '@/utils/db';
 
 import { Nav } from '../Nav/Nav';
 import * as styles from './Header.module.scss';
@@ -46,7 +48,12 @@ export const Header = () => {
     <header className={`${styles.header} ${!show ? styles.hidden : ''}`}>
       <Logo />
       {isMobile ? (
-        <BurgerMenu />
+        <div className={styles.mobileMenu}>
+          <a href={`tel:${CURRENT_PHONE}`}>
+            <ICONS.Phone />
+          </a>
+          <BurgerMenu />
+        </div>
       ) : (
         <>
           <Nav />
