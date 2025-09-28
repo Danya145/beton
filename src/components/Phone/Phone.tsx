@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useAlert } from '@/ui/Alert/useAlert';
 import { ICONS } from '@/ui/constants';
+import { CURRENT_PHONE, CURRENT_PHONE_VIEW } from '@/utils/db';
 
 import * as styles from './Phone.module.scss';
 
@@ -34,7 +35,7 @@ export const Phone = () => {
     <div className={styles.container} id="phone">
       <ICONS.Phone />
       <div className={styles.phones}>
-        {renderPhoneLink('+375296034046', '+375 (29) 603 40 46')}
+        {renderPhoneLink(CURRENT_PHONE, CURRENT_PHONE_VIEW)}
       </div>
     </div>
   );

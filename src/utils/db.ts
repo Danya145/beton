@@ -131,3 +131,6 @@ export const brandOptions: Record<
     price: +mark.price,
   })),
 };
+
+export const CURRENT_PHONE = '+375296034046';
+export const CURRENT_PHONE_VIEW = '+375 (29) 603 40 46';
